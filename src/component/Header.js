@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as styleVars from './style_vars';
+import * as styleVars from '../data/style_vars';
 
 
 

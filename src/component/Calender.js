@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import * as styleVars from './style_vars';
-import { days, maxDaysOfMonth, displayDate, dayOfWeek, today, getMonthName } from './DateVars'
+import * as styleVars from '../data/style_vars';
+import { displayDate, dayOfWeek, today, getMonthName } from '../data/DateVars';
+import days from '../data/days';
+import maxDaysOfMonth from '../data/maxDaysOfMonth';
 
 let daysCounter = 0;
 
