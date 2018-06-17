@@ -21,6 +21,16 @@ class Calender extends Component {
                      return null;
                                          }
              })}
+         
+    calRenderCheck() {
+        return Object.keys(days).map(index => {
+                                if(index < dayOfWeek) {
+                                    return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#bbb'}}></td>
+                                                }
+                                else {daysCounter++;
+                                      return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{daysCounter}</td>}
+                                })
+                }
                                          
     render() {
         return(
@@ -31,12 +41,7 @@ class Calender extends Component {
                             {this.calHeaderRender()}
                         </tr>
                         <tr>
-                            {Object.keys(days).map(index => {
-                                if(index < dayOfWeek) {
-                                    return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#bbb'}}></td>}
-                                else {daysCounter++;
-                                      return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{daysCounter}</td>}
-                                })}
+                            {this.calRenderCheck()}
                         </tr>
                         <tr>
                             {this.calRender(7)}
