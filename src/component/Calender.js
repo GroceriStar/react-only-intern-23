@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import * as styleVars from './style_vars';
+import { days, maxDaysOfMonth, displayDate, dayOfWeek, today, getMonthName } from './DateVars'
 
-let days = {0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat'};
-let maxDaysOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  //This is the array of maximum number of days in each month.
-let today = new Date();
-let displayDate = today.toDateString();
-today.setDate(1);
-let dayOfWeek = today.getDay();
-let count = 0;
+let daysCounter = 0;
 
 class Calender extends Component {
     
@@ -18,9 +13,9 @@ class Calender extends Component {
                                          
     calRender(x) {
             return Object.keys(days).map(index => {
-                    if (count < maxDaysOfMonth[today.getMonth()]) {   //We will check if count exceeds the maximum number of days in that month
-                     count++;
-                     return <td key={x+index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{count}</td>
+                    if (daysCounter < maxDaysOfMonth[today.getMonth()]) { //We will check if daysCounter exceeds the maximum number of days in that month
+                     daysCounter++;
+                     return <td key={x+index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{daysCounter}</td>
                                          }
                      else {
                      return null;
@@ -39,8 +34,8 @@ class Calender extends Component {
                             {Object.keys(days).map(index => {
                                 if(index < dayOfWeek) {
                                     return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#bbb'}}></td>}
-                                else {count++;
-                                      return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{count}</td>}
+                                else {daysCounter++;
+                                      return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{daysCounter}</td>}
                                 })}
                         </tr>
                         <tr>
