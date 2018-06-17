@@ -7,14 +7,12 @@ today.setDate(1);
 let dayOfWeek = today.getDay();
 let count = 0;
 
-class Calender extends Component {
-       
-    calRender(x) {Object.keys(days).map(index => {count++;
-                 return <td key={x+index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{count}</td>})}
+class Calender extends Component {      
+    calRender(x) {
+            return Object.keys(days).map(index => {count++;
+                     return <td key={x+index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{count}</td>})}
+                                         
     render() {
-        
-        
-        
         return(
             <table>
                     <tr>
@@ -29,16 +27,16 @@ class Calender extends Component {
                                                 })}
                     </tr>
                     <tr>
-                    {this.calRender(7)}
+                        {this.calRender(7)}
                     </tr>
                     <tr>
-                    {this.calRender(14)}
+                        {this.calRender(14)}
                     </tr>
                     <tr>
-                    {this.calRender(21)}
+                        {this.calRender(21)}
                     </tr>
                     <tr>
-                    {this.calRender(21)}
+                        {this.calRender(21)}
                     </tr>
                 
             </table>
