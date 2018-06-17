@@ -17,9 +17,11 @@ class DayChecker extends Component {
     
     weekCheck(dayNum, callback, otherCallback) {
     if (dayNum === 6 || dayNum === 0) {
+        if(typeof callback === "function")
         return callback();
     }
     else {
+        if(typeof otherCallback === "function")
         return otherCallback();
     }
 }
