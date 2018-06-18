@@ -34,19 +34,58 @@
 }
 */
 
+div.timeline {
+    margin: 50px 0 0 0;
+}
+
+/*
+div.timeline ul li {
+    border: none;
+}
+*/
+
 div.data-class ul li {
     height: 50px;
 }
 
-
-
 div.data-class {
     width: 200px;
-    
+}
+ul li:first-child {
+    text-align: center;
 }
 
+div.data-class ul li.abs {
+    background-color: #567F91;
+}
 
+div.data-class ul li.rowing {
+    background-color: #433455;
+}
 
+div.data-class ul li.yoga {
+    background-color: #A2B9B1;
+}
+
+div.data-class ul li.restorive {
+    background-color: #F6B068;
+}
+
+div.data-class ul li.restorive, div.data-class ul li.yoga, div.data-class ul li.rowing, div.data-class ul li.abs {
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 2px 2px black;
+}
+
+div.data-class ul li.restorive:hover, div.data-class ul li.yoga:hover, div.data-class ul li.rowing:hover, div.data-class ul li.abs:hover {
+    filter: brightness(1.3);
+    filter: opacity(70%);
+}
+
+div.data-class ul li.restorive div, div.data-class ul li.yoga div, div.data-class ul li.rowing div, div.data-class ul li.abs div {
+    color: #eee;
+    font-weight: 400;
+}
 
 div.data-class ul li.oneHour {
     height: 100px;
@@ -64,4 +103,7 @@ div.data-class ul li.twoHourToQuarter {
     height: 175px;
 }
 
+div.data-class ul li.short0 {
+    height: 20px;
+}
 
