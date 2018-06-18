@@ -1,3 +1,4 @@
+/*
 .App {
   text-align: center;
 }
@@ -31,8 +32,21 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+*/
 
-.tile {
-    width: 150px;
-    border: 1px solid #eea;
+
+
+
+
+div.data-class {
+    width: 200px;
+    
 }
+
+
+
+
+.testClass {
+    height: 120px;
+}
+
