@@ -34,7 +34,9 @@
 }
 */
 
-
+div.data-class ul li {
+    height: 50px;
+}
 
 
 
@@ -46,7 +48,20 @@ div.data-class {
 
 
 
-.testClass {
-    height: 120px;
+div.data-class ul li.oneHour {
+    height: 100px;
 }
+
+div.data-class ul li.oneHourHalf {
+    height: 150px;
+}
+
+div.data-class ul li.oneHourQuarter {
+    height: 125px;
+}
+
+div.data-class ul li.twoHourToQuarter {
+    height: 175px;
+}
+
 

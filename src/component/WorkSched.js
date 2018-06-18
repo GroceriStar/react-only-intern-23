@@ -56,13 +56,13 @@ class WorkSched extends Component {
                     <ListGroup>
                         <ListGroupItem>Monday</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
-                        <ListGroupItem color='success' className='testClass'>Abs Circuit</ListGroupItem>
+                        <ListGroupItem color='success' className='oneHour'><div>9:30-10:30</div>Abs Circuit</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHourHalf'><div>11:00-12:30</div>Rowing Workout</ListGroupItem>
                         <ListGroupItem ></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHourQuarter'><div>14:00-15:15</div>Yoga Level 1</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
@@ -77,14 +77,14 @@ class WorkSched extends Component {
                        <ListGroupItem>Tuesday</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHour'><div>10:00-11:00</div>Rowing Workout</ListGroupItem>
+                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHourHalf'><div>11:30-13:00</div>Restoration Yoga</ListGroupItem>
+                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHourHalf'><div>13:30-15:00</div>Abs Circuit</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHour'><div>15:45-16:45</div>Yoga Level 1</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
@@ -94,13 +94,13 @@ class WorkSched extends Component {
                 <div class='data-class'>
                            <ListGroup>
                        <ListGroupItem>Wednesday</ListGroupItem>
+                        <ListGroupItem className='oneHourQuarter'><div>09:00-10:15</div>Restorative Yoga</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHour'><div>10:45-11:45</div>Yoga Level 1</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='twoHourToQuarter'><div>12:00-13:45</div>Rowing Workout</ListGroupItem>
+                        <ListGroupItem className='oneHourQuarter'><div>13:45-15:00</div>Yoga Level 1</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
@@ -114,18 +114,18 @@ class WorkSched extends Component {
                            <ListGroup>
                        <ListGroupItem>Thursday</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHour'><div>09:30-10:30</div>Abs Circuit</ListGroupItem>
+                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='twoHourToQuarter'><div>12:00-13:45</div>Restorive Yoga</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHour'><div>15:30-16:30</div>Abs Circuit</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHourHalf'><div>17:00-18:30</div>Rowing Workout</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                     </ListGroup>
                 </div>
@@ -134,16 +134,16 @@ class WorkSched extends Component {
                        <ListGroupItem>Friday</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHour'><div>10:00-11:00</div>Rowing Workout</ListGroupItem>
+                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem className='oneHourHalf'><div>12:30-14:00</div>Abs Circuit</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
-                        <ListGroupItem></ListGroupItem>
+                        <ListGroupItem><div className='oneHour'>15:45-16:45</div>Yoga Level 1</ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                         <ListGroupItem></ListGroupItem>
                     </ListGroup>
