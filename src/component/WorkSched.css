@@ -38,11 +38,9 @@ div.timeline {
     margin: 50px 0 0 0;
 }
 
-/*
 div.timeline ul li {
     border: none;
 }
-*/
 
 div.data-class ul li {
     height: 50px;
@@ -83,7 +81,7 @@ div.data-class ul li.restorive:hover, div.data-class ul li.yoga:hover, div.data-
 }
 
 div.data-class ul li.restorive div, div.data-class ul li.yoga div, div.data-class ul li.rowing div, div.data-class ul li.abs div {
-    color: #eee;
+    color: #eed;
     font-weight: 400;
 }
 
