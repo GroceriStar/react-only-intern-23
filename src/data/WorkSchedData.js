@@ -29,6 +29,28 @@ const timeLine = () => {
     );
 }
 
+Component.toggleForAbs = function() {
+        this.setState({
+            modalForAbs: !this.state.modalForAbs
+        });
+    }
+Component.toggleForRowing = function() {
+        this.setState({
+            modalForRowing: !this.state.modalForRowing
+        });
+    }
+
+Component.toggleForYoga = function() {
+        this.setState({
+            modalForYoga: !this.state.modalForYoga
+        });
+    }
+Component.toggleForRestorive = function() {
+        this.setState({
+            modalForRestorive: !this.state.modalForRestorive
+        });
+    }
+
 class Monday extends Component {
     constructor(props) {
         super(props);
@@ -39,35 +61,11 @@ class Monday extends Component {
             modalForRestorive: false
         };
         
-        this.toggleForAbs = this.toggleForAbs.bind(this);
-        this.toggleForRowing = this.toggleForRowing.bind(this);
-        this.toggleForYoga = this.toggleForYoga.bind(this);
-        this.toggleForRestorive = this.toggleForRestorive.bind(this);
-    }
-    
-    toggleForAbs() {
-        this.setState({
-            modalForAbs: !this.state.modalForAbs
-        });
-    }
-    
-     toggleForRowing() {
-        this.setState({
-            modalForRowing: !this.state.modalForRowing
-        });
-    }
-    
-     toggleForYoga() {
-        this.setState({
-            modalForYoga: !this.state.modalForYoga
-        });
-    }
-    
-     toggleForRestorive() {
-        this.setState({
-            modalForRestorive: !this.state.modalForRestorive
-        });
-    }
+        this.toggleForAbs = Component.toggleForAbs.bind(this);
+        this.toggleForRowing = Component.toggleForRowing.bind(this);
+        this.toggleForYoga = Component.toggleForYoga.bind(this);
+        this.toggleForRestorive = Component.toggleForRestorive.bind(this);
+    }     
     
     render() {
         return(
@@ -75,13 +73,13 @@ class Monday extends Component {
                 <ListGroup>
                     <ListGroupItem>Monday</ListGroupItem>
                     <ListGroupItem></ListGroupItem>
-                    <ListGroupItem className='oneHour abs' onClick={this.toggleForAbs}><div>9:30-10:30</div>Abs Circuit</ListGroupItem>
+                    <ListGroupItem ref='abs' className='oneHour abs' onClick={this.toggleForAbs}><div>9:30-10:30</div>Abs Circuit</ListGroupItem>
                     <ListGroupItem></ListGroupItem>
-                    <ListGroupItem className='oneHourHalf rowing' onClick={this.toggleForRowing}><div>11:00-12:30</div>Rowing Workout</ListGroupItem>
+                    <ListGroupItem ref='rowing'className='oneHourHalf rowing' onClick={this.toggleForRowing}><div>11:00-12:30</div>Rowing Workout</ListGroupItem>
                     <ListGroupItem ></ListGroupItem>
                     <ListGroupItem></ListGroupItem>
                     <ListGroupItem></ListGroupItem>
-                    <ListGroupItem className='oneHourQuarter yoga' onClick={this.toggleForYoga}><div>14:00-15:15</div>Yoga Level 1</ListGroupItem>
+                    <ListGroupItem ref='yoga' className='oneHourQuarter yoga' onClick={this.toggleForYoga}><div>14:00-15:15</div>Yoga Level 1</ListGroupItem>
                     <ListGroupItem className='short0'></ListGroupItem>
                     <ListGroupItem></ListGroupItem>
                     <ListGroupItem></ListGroupItem>
@@ -149,36 +147,13 @@ class Tuesday extends Component {
             modalForRestorive: false
         };
         
-        this.toggleForAbs = this.toggleForAbs.bind(this);
-        this.toggleForRowing = this.toggleForRowing.bind(this);
-        this.toggleForYoga = this.toggleForYoga.bind(this);
-        this.toggleForRestorive = this.toggleForRestorive.bind(this);
+        this.toggleForAbs = Component.toggleForAbs.bind(this);
+        this.toggleForRowing = Component.toggleForRowing.bind(this);
+        this.toggleForYoga = Component.toggleForYoga.bind(this);
+        this.toggleForRestorive = Component.toggleForRestorive.bind(this);
     }
     
-    toggleForAbs() {
-        this.setState({
-            modalForAbs: !this.state.modalForAbs
-        });
-    }
-    
-     toggleForRowing() {
-        this.setState({
-            modalForRowing: !this.state.modalForRowing
-        });
-    }
-    
-     toggleForYoga() {
-        this.setState({
-            modalForYoga: !this.state.modalForYoga
-        });
-    }
-    
-     toggleForRestorive() {
-        this.setState({
-            modalForRestorive: !this.state.modalForRestorive
-        });
-    }
-    
+        
     render() {
         return(
             <div>
@@ -258,37 +233,13 @@ class Wednesday extends Component {
             modalForRestorive: false
         };
         
-        this.toggleForAbs = this.toggleForAbs.bind(this);
-        this.toggleForRowing = this.toggleForRowing.bind(this);
-        this.toggleForYoga = this.toggleForYoga.bind(this);
-        this.toggleForRestorive = this.toggleForRestorive.bind(this);
+        this.toggleForAbs = Component.toggleForAbs.bind(this);
+        this.toggleForRowing = Component.toggleForRowing.bind(this);
+        this.toggleForYoga = Component.toggleForYoga.bind(this);
+        this.toggleForRestorive = Component.toggleForRestorive.bind(this);
     }
     
-    toggleForAbs() {
-        this.setState({
-            modalForAbs: !this.state.modalForAbs
-        });
-    }
-    
-     toggleForRowing() {
-        this.setState({
-            modalForRowing: !this.state.modalForRowing
-        });
-    }
-    
-     toggleForYoga() {
-        this.setState({
-            modalForYoga: !this.state.modalForYoga
-        });
-    }
-    
-     toggleForRestorive() {
-        this.setState({
-            modalForRestorive: !this.state.modalForRestorive
-        });
-    }
-    
-    render() {
+      render() {
         return(
             <div>
                 <ListGroup>
@@ -367,36 +318,12 @@ class Thursday extends Component {
             modalForRestorive: false
         };
         
-        this.toggleForAbs = this.toggleForAbs.bind(this);
-        this.toggleForRowing = this.toggleForRowing.bind(this);
-        this.toggleForYoga = this.toggleForYoga.bind(this);
-        this.toggleForRestorive = this.toggleForRestorive.bind(this);
+        this.toggleForAbs = Component.toggleForAbs.bind(this);
+        this.toggleForRowing = Component.toggleForRowing.bind(this);
+        this.toggleForYoga = Component.toggleForYoga.bind(this);
+        this.toggleForRestorive = Component.toggleForRestorive.bind(this);
     }
-    
-    toggleForAbs() {
-        this.setState({
-            modalForAbs: !this.state.modalForAbs
-        });
-    }
-    
-     toggleForRowing() {
-        this.setState({
-            modalForRowing: !this.state.modalForRowing
-        });
-    }
-    
-     toggleForYoga() {
-        this.setState({
-            modalForYoga: !this.state.modalForYoga
-        });
-    }
-    
-     toggleForRestorive() {
-        this.setState({
-            modalForRestorive: !this.state.modalForRestorive
-        });
-    }
-    
+
     render() {
         return(
             <div>
@@ -475,36 +402,12 @@ class Friday extends Component {
             modalForRestorive: false
         };
         
-        this.toggleForAbs = this.toggleForAbs.bind(this);
-        this.toggleForRowing = this.toggleForRowing.bind(this);
-        this.toggleForYoga = this.toggleForYoga.bind(this);
-        this.toggleForRestorive = this.toggleForRestorive.bind(this);
+        this.toggleForAbs = Component.toggleForAbs.bind(this);
+        this.toggleForRowing = Component.toggleForRowing.bind(this);
+        this.toggleForYoga = Component.toggleForYoga.bind(this);
+        this.toggleForRestorive = Component.toggleForRestorive.bind(this);
     }
-    
-    toggleForAbs() {
-        this.setState({
-            modalForAbs: !this.state.modalForAbs
-        });
-    }
-    
-     toggleForRowing() {
-        this.setState({
-            modalForRowing: !this.state.modalForRowing
-        });
-    }
-    
-     toggleForYoga() {
-        this.setState({
-            modalForYoga: !this.state.modalForYoga
-        });
-    }
-    
-     toggleForRestorive() {
-        this.setState({
-            modalForRestorive: !this.state.modalForRestorive
-        });
-    }
-    
+        
     render() {
         return(
             <div>
