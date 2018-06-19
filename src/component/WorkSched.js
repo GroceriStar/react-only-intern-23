@@ -10,12 +10,12 @@ class WorkSched extends Component {
                     <div>
                         <Container>
                             <Row>
-                                <div class='timeline'>{timeLine()}</div>
-                                <div class='data-class'><Monday /></div>
-                                <div class='data-class'><Tuesday /></div>
-                                <div class='data-class'><Wednesday /></div>
-                                <div class='data-class'><Thursday /></div>
-                                <div class='data-class'><Friday /></div>
+                                <div className='timeline'>{timeLine()}</div>
+                                <div className='data-class'><Monday /></div>
+                                <div className='data-class'><Tuesday /></div>
+                                <div className='data-class'><Wednesday /></div>
+                                <div className='data-class'><Thursday /></div>
+                                <div className='data-class'><Friday /></div>
                             </Row>
                         </Container>
                     </div>
