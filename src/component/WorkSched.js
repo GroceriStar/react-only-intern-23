@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row } from 'reactstrap';
 import './WorkSched.css';
-import { TimeLine, Monday, Tuesday, Wednesday, Thursday, Friday } from '../data/WorkSchedComponents';
+import { TimeLine, Monday, Tuesday, Wednesday, Thursday, Friday } from './WorkSchedComponents';
 
 
 class WorkSched extends Component {
