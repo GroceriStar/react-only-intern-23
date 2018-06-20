@@ -1,6 +1,6 @@
 import months from './months';
-import days from './days';
-import maxDaysOfMonth from './maxDaysOfMonth'
+
+
 
 
 let today = new Date();

@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { Table, Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 import './WorkSched.css';
-import { timeLine, Monday, Tuesday, Wednesday, Thursday, Friday } from '../data/WorkSchedData';
+import { TimeLine, Monday, Tuesday, Wednesday, Thursday, Friday } from '../data/WorkSchedComponents';
 
 
 class WorkSched extends Component {
             render() {
                 return(
                     <div>
+                        <div className='header'>
+                        <h1>Schedule</h1>
+                        </div>
                         <Container>
                             <Row>
-                                <div className='timeline'>{timeLine()}</div>
+                                <div className='timeline'><TimeLine /></div>
                                 <div className='data-class'><Monday /></div>
                                 <div className='data-class'><Tuesday /></div>
                                 <div className='data-class'><Wednesday /></div>
