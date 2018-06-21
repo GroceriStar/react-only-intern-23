@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Calender } from './component/Calender';
 import { DayChecker } from './component/DayChecker';
+import { MealPlan } from './component/MealPlan';
 import { WorkSched } from './component/WorkSched';
+
 
 
 
@@ -12,7 +14,8 @@ class App extends Component {
     return (
         <div>
       {/*  <DayChecker /> */}
-        <WorkSched />
+       <WorkSched />
+        <MealPlan />
         </div>
     );
   }

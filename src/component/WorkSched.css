@@ -21,7 +21,7 @@ div.data-class ul li {
 div.data-class {
     width: 200px;
 }
-ul li:first-child {
+div.data-class ul li:first-child {
     text-align: center;
 }
 
