@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+let styling = {
+    padding: '40px'
+}
+
 class MealPlan extends Component {
     constructor(props) {
         super(props);
@@ -16,7 +20,7 @@ class MealPlan extends Component {
     }
     
     renderMeals() {
-        return (this.state.meals.map((meal, index) => {return <li key={index}>{meal}<img key={index} src={this.state.images[index]} alt="Didn't Load" /></li>}));
+        return (this.state.meals.map((meal, index) => {return <li style={styling} key={index}>{meal}<img style={styling} key={index} src={this.state.images[index]} alt="Didn't Load" /></li>}));
     }
     
     changeHandle(event) {
