@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Container, Row } from 'reactstrap';
 import './WorkSched.css';
-import { TimeLine, Monday, Tuesday, Wednesday, Thursday, Friday } from './WorkSchedComponents';
+import { TimeLine, Day } from './WorkSchedComponents';
+
 
 
 class WorkSched extends Component {
             render() {
+                let weekdayName = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+                
                 return(
                     <div>
                         <div className='header'>
@@ -14,11 +17,7 @@ class WorkSched extends Component {
                         <Container>
                             <Row>
                                 <div className='timeline'><TimeLine /></div>
-                                <div className='data-class'><Monday /></div>
-                                <div className='data-class'><Tuesday /></div>
-                                <div className='data-class'><Wednesday /></div>
-                                <div className='data-class'><Thursday /></div>
-                                <div className='data-class'><Friday /></div>
+                    {weekdayName.map( (day, index) => <div key={index} className='data-class'><Day key={index} dayProp={day} /></div>)}
                             </Row>
                         </Container>
                     </div>
