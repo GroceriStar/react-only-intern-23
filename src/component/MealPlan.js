@@ -27,15 +27,14 @@ class MealPlan extends Component {
     
     handleClick() {
         this.setState({
-            meals: [...this.state.meals, this.state.meal]
-        })
-        console.log(this.state.images)
+            meals: [...this.state.meals, this.state.meal],
+            images: [...this.state.images, this.state.imgURL]
+        });
     }
     
     handleImage(event) {
         this.setState({
-            imgURL: event.target.value,
-            images: [...this.state.images, this.state.imgURL]
+            imgURL: event.target.value
         });
     }
     
@@ -46,7 +45,7 @@ class MealPlan extends Component {
             <input onChange={this.changeHandle} value={this.state.meal} type='text' placeholder='Meal name here' />
            
             <button onClick={this.handleClick}>Add meal</button>
-             <input type='text' onChange={this.handleImage} value={this.state.imgURL} placeholder='Image URL here' />
+             <input type='text' onChange={this.handleImage} placeholder='Image URL here' />
             <ul>
                 {this.renderMeals()}
             </ul>
