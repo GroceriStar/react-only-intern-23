@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as styleVars from '../data/style_vars';
-import { displayDate, dayOfWeek, today } from '../data/DateVars';
+import { displayDate, today } from '../data/DateVars';
 import days from '../data/days';
 import months from '../data/months';
 import maxDaysOfMonth from '../data/maxDaysOfMonth';
@@ -67,7 +67,7 @@ class Calender extends Component {
             return Object.keys(days).map(index => {
                     if (daysCounter < maxDaysOfMonth[this.state.month]) { //We will check if daysCounter exceeds the maximum number of days in that month
                      daysCounter++;
-                     return <td key={x+index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{daysCounter}</td>
+                     return <td key={x+index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777', cursor: 'pointer'}}>{daysCounter}</td>
                                          }
                      else {
                      return null;
@@ -80,7 +80,7 @@ class Calender extends Component {
                                     return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#bbb'}}></td>
                                                 }
                                 else {daysCounter++;
-                                      return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{daysCounter}</td>}
+                                      return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777', cursor: 'pointer'}}>{daysCounter}</td>}
                                 })
                 }
                                          
