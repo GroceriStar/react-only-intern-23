@@ -15,8 +15,8 @@ class App extends Component {
         <div>
       {/*  <DayChecker /> */}
        <WorkSched />
-        {/*<MealPlan />*/}
         <Calender />
+       <MealPlan />
         </div>
     );
   }
