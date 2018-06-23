@@ -1,3 +1,10 @@
+Goals
+- [ ] Learn React Basics + complete all chapters
+- [ ] Create a standalone Component for Calenar with style from free template. Will be a stored at separated repo, so anyone can grab it and use. And improve.
+- [ ] Update Calendar component with ReactStrap. It'll be a clean version for people that don't want to use Bootstrap and Bootstrap version for us, that we'll use in our projects
+- [ ] Component that is published on Bit
+- [ ] Meal Planning Calendar
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
