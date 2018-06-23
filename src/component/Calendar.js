@@ -12,7 +12,7 @@ import maxDaysOfMonth from '../data/maxDaysOfMonth';
 
 let daysCounter = 0;
 
-class Calender extends Component {
+class Calendar extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -69,7 +69,7 @@ class Calender extends Component {
             return Object.keys(days).map(index => {
                     if (daysCounter < maxDaysOfMonth[this.state.month]) { //We will check if daysCounter exceeds the maximum number of days in that month
                      daysCounter++;
-                     return <td key={x+index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{daysCounter}</td>
+                     return <td key={x+index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777', cursor: 'pointer'}}>{daysCounter}</td>
                                          }
                      else {
                      return null;
@@ -82,7 +82,7 @@ class Calender extends Component {
                                     return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#bbb'}}></td>
                                                 }
                                 else {daysCounter++;
-                                      return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777'}}>{daysCounter}</td>}
+                                      return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777', cursor: 'pointer'}}>{daysCounter}</td>}
                                 })
                 }
 
@@ -124,4 +124,4 @@ class Calender extends Component {
     }
 }
 
-export { Calender }
+export { Calendar }
