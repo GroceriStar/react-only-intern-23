@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as styleVars from '../data/style_vars';
 import { displayDate, today } from '../data/DateVars';
-import days from '../data/days';
+import { days } from '../data/days';
 import months from '../data/months';
 import maxDaysOfMonth from '../data/maxDaysOfMonth';
 

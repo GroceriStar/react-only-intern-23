@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as styleVars from '../data/style_vars';
-import { Header } from './Header'
+import { Header } from './Header';
+import { days } from '../data/days'
 
 let today = new Date().getDay();
 
@@ -11,7 +12,6 @@ class DayChecker extends Component {
     }
     
     getDayName(number) {
-    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return days[number];
       }
     
