@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import * as styleVars from '../data/style_vars';
-import { displayDate, today } from '../data/DateVars';
-import { days } from '../data/days';
-import months from '../data/months';
+import { days, weekdayName } from '../data/days';
+import {
+  displayDate,
+  dayOfWeek,
+  today
+} from '../data/DateVars';
+
+import months         from '../data/months';
 import maxDaysOfMonth from '../data/maxDaysOfMonth';
 
 let daysCounter = 0;
 
-class Calender extends Component {
+class Calendar extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +22,7 @@ class Calender extends Component {
         this.incrementMonth = this.incrementMonth.bind(this);
         this.decrementMonth = this.decrementMonth.bind(this);
     }
-    
+
     incrementMonth() {
         daysCounter = 0;
         if(this.state.month === 11) {
@@ -26,18 +31,16 @@ class Calender extends Component {
                month: 0,
                 firstDay: today.getDay()
             });
-        }
-        else {
+        } else {
             today.setMonth(this.state.month + 1);
             this.setState({
-            month: this.state.month + 1,
-            firstDay: today.getDay()            
-        });
+              month: this.state.month + 1,
+              firstDay: today.getDay()
+            });
         }
-        
-         
+
     }
-    
+
     decrementMonth() {
         daysCounter = 0;
         if(this.state.month === 0) {
@@ -46,23 +49,22 @@ class Calender extends Component {
                 month: 11,
                 firstDay: today.getDay()
             });
-        }
-        else{
+        } else {
             today.setMonth(this.state.month - 1);
             this.setState({
-            month: this.state.month - 1,
-            firstDay: today.getDay()            
-        });
+              month: this.state.month - 1,
+              firstDay: today.getDay()
+            });
         }
-        
-         
-    }
-    
-     calHeaderRender() {
-            return Object.keys(days).map((index) => <th key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#232'}}>{days[index]}</th>)
-            }
 
-                                         
+
+    }
+
+    calHeaderRender() {
+      return Object.keys(days).map((index) => <th key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#232'}}>{days[index]}</th>)
+    }
+
+
     calRender(x) {
             return Object.keys(days).map(index => {
                     if (daysCounter < maxDaysOfMonth[this.state.month]) { //We will check if daysCounter exceeds the maximum number of days in that month
@@ -73,7 +75,7 @@ class Calender extends Component {
                      return null;
                                          }
              })}
-         
+
     calRenderCheck() {
         return Object.keys(days).map(index => {
                                 if(index < this.state.firstDay) {
@@ -83,7 +85,7 @@ class Calender extends Component {
                                       return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777', cursor: 'pointer'}}>{daysCounter}</td>}
                                 })
                 }
-                                         
+
     render() {
         return(
             <div>
@@ -122,4 +124,4 @@ class Calender extends Component {
     }
 }
 
-export { Calender }
+export { Calendar }

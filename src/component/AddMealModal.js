@@ -1,5 +1,17 @@
-import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input, Form, FormGroup } from 'reactstrap';
+import React, {
+   Component
+ } from 'react';
+import {
+  Button, 
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Label,
+  Input,
+  Form,
+  FormGroup
+} from 'reactstrap';
 
 class AddMeal extends Component {
     constructor(props) {
@@ -11,7 +23,7 @@ class AddMeal extends Component {
         this.clickHandle = this.clickHandle.bind(this);
 
     }
-    
+
     toggle = function() {
         this.setState({
             modal: !this.state.modal
@@ -21,8 +33,8 @@ class AddMeal extends Component {
         this.props.handleClick();
         this.toggle();
     }
-   
-    
+
+
     render() {
         return(<div>
        <Button onClick={this.toggle}>Add Meal</Button>
