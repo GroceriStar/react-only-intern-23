@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import * as styleVars from './style_vars';
-
 
 
 class Header extends Component {
