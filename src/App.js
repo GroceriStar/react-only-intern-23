@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Calendar }  from './component/Calendar';
+import { Calendar }  from './component/Calender/Calendar';
 import { MealPlan }  from './component/MealPlan';
 import { WorkSched } from './component/WorkSched';
 import { DayChecker } from './component/DayChecker';
