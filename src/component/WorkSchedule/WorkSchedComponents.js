@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {  ListGroup, ListGroupItem } from 'reactstrap';
-import { DataModalAbs, DataModalRowing, DataModalYoga, DataModalRestorive } from '../component/Modals';
-import { weekdayName } from '../data/days'
+import { DataModalAbs, DataModalRowing, DataModalYoga, DataModalRestorive } from './Modals';
+import { weekdayName } from '../../data/days'
 
 
 class TimeLine extends Component {

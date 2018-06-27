@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row } from 'reactstrap';
 import './WorkSched.css';
 import { TimeLine, Day } from './WorkSchedComponents';
-import { weekdayName } from '../data/days';
+import { weekdayName } from '../../data/days';
 
 
 

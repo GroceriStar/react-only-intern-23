@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Calendar }  from './component/Calender/Calendar';
+import { Calendar }  from './component/Calendar/Calendar';
 import { MealPlan }  from './component/MealPlan';
-import { WorkSched } from './component/WorkSched';
+import { WorkSched } from './component/WorkSchedule/WorkSched';
 import { DayChecker } from './component/DayChecker';
+import { ColumnRender } from './component/WorkSchedule/DayModel'
 
 
 
@@ -16,9 +17,11 @@ class App extends Component {
         <div>
       {/*  <DayChecker /> */}
         <DayChecker />
-       <WorkSched />
+        <WorkSched />
+                <ColumnRender />
+
         <Calendar />
-       <MealPlan />
+        <MealPlan />
         </div>
     );
   }
