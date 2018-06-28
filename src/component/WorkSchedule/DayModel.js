@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { data } from './Data';
-import { Modals } from './ModalWork';
+import { data } from '../../data/Data';
+import { Modals } from '../Modals/ModalWork';
 import { ListGroupItem, ListGroup } from 'reactstrap';
 
 class ColumnRender extends Component {
     
     getOffset(obj) {
-        var someObject;
         let timeDiff;
         let timeArray;
         let startLocation;
@@ -31,6 +30,7 @@ class ColumnRender extends Component {
         console.log(buffer);
         let topToDown = [];
         let i = 0;
+        let j = 0;
         for(var traverse = 0; traverse <= 1000; traverse +=25) {
             topToDown.push(traverse);
             if(buffer[i].start === traverse ) {
@@ -41,36 +41,34 @@ class ColumnRender extends Component {
             }   
         }
         i = 0;
-        let j = 0;
-        console.log(topToDown);
-    return topToDown.map((item, index) => {
-        if(item === buffer[i].start) {
-            (i < buffer.length - 1) ? i++ : null;
-            (j < buffer.length) ? j++ : null;
-            return (<div>
-            <Modals data={buffer[j-1]} key={item} /></div> 
-            );
-        }
-        
-        if(item === (buffer[i].start + buffer[i].height) && (item%50 !== 0) ) {
-            return (<div><ListGroupItem style={{height: '25px'}} key={item}></ListGroupItem></div>);
-        }
-        
-        if(item%50 === 0) {
-            if(topToDown[index+1] === buffer[i].start) {
-                console.log('Special');
+        return (topToDown.map((item, index) => {
+            if(item === buffer[i].start) {
+                (i < buffer.length - 1) ? i++ : null;
+                (j < buffer.length) ? j++ : null;
                 return (
-                <ListGroupItem style={{height: '25px'}} key={item}></ListGroupItem>
+                <Modals data={buffer[j-1]} key={item} />
                 );
             }
-            console.log('General');
-            return (
-            <div><ListGroupItem style={{height: '50px'}} key={item}></ListGroupItem></div>
-            );
-        }
-        
-        
-    })    
+
+            if(item === (buffer[i].start + buffer[i].height) && (item%50 !== 0) ) {
+                return (
+                        <ListGroupItem style={{height: '25px'}} key={item}></ListGroupItem>
+               );
+            }
+
+            if(item%50 === 0) {
+                if(topToDown[index+1] === buffer[i].start) {
+                    return (
+                            <ListGroupItem style={{height: '25px'}} key={item}></ListGroupItem>
+                    );
+                }
+                return (
+                        <ListGroupItem style={{height: '50px'}} key={item}></ListGroupItem>
+                );
+            }
+            return null;
+        })
+        );
     }
     
     render() {
@@ -78,7 +76,6 @@ class ColumnRender extends Component {
                {this.rendererFunc(data[0])}</ListGroup></div>
                 );
     }
-}
-    
+}   
     
 export { ColumnRender }

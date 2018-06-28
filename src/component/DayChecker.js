@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as styleVars from '../data/style_vars';
-import { Header } from './Header';
+import { Header } from './Header/Header';
 import { days } from '../data/days'
 
 let today = new Date().getDay();

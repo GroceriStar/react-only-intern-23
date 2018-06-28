@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AddMeal } from './AddMealModal';
+import { AddMeal } from '../Modals/AddMealModal';
 import { Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle, } from 'reactstrap';
 
 class MealPlan extends Component {

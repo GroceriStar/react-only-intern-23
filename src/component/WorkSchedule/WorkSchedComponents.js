@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {  ListGroup, ListGroupItem } from 'reactstrap';
-import { DataModalAbs, DataModalRowing, DataModalYoga, DataModalRestorive } from './Modals';
+import { DataModalAbs, DataModalRowing, DataModalYoga, DataModalRestorive } from '../Modals/Modals';
 import { weekdayName } from '../../data/days'
 
 
