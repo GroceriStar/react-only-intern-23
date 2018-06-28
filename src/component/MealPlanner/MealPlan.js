@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AddMeal } from '../Modals/AddMealModal';
 import { Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle, } from 'reactstrap';
-
+import { cardWidth, cardHeight, topMargin } from './MealPlanStyle'
 class MealPlan extends Component {
     constructor(props) {
         super(props);
@@ -33,8 +33,8 @@ class MealPlan extends Component {
                     return (
                         <div>
                         <Col xs='3'>
-                          <Card style={{width: '300px'}}  key={index}>
-                            <CardImg key={index} top width="100%" style={{height: '200px'}}src={this.state.images[index]} alt="This image is not supported" />
+                          <Card style={cardWidth}  key={index}>
+                            <CardImg key={index} top width="100%" style={cardHeight} src={this.state.images[index]} alt="This image is not supported" />
                             <CardBody key={index}>
                               <CardTitle>{meal}</CardTitle>
                               <CardText>{this.state.descriptions[index]}</CardText>
@@ -98,7 +98,7 @@ class MealPlan extends Component {
               handleImage={this.handleImage}
               changeHandle={this.changeHandle}
               handleClick={this.handleClick}  />
-            <div style={{margin: '30px 0px'}}>
+            <div style={topMargin}>
             <ul>
                 {this.renderMeals()}
             </ul>
