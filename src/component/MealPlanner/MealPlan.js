@@ -36,7 +36,6 @@ class MealPlan extends Component {
                     return (
                         <div>
                         <Col xs='3'>
-                          <Card style={cardWidth}  key={index}>
                           <Card style={cardSize}  key={index}>
                             <CardImg key={index} top width="100%" style={cardHeight} src={this.state.images[index]} alt="This image is not supported" />
                             <CardBody key={index}>
