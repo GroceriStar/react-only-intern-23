@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { data } from '../../data/Data';
 import { Modals } from '../Modals/ModalWork';
 import { ListGroupItem, ListGroup } from 'reactstrap';
+import { defaultBlockHeight, fillerBlockHeight } from '../../data/style_vars'
 
 class ColumnRender extends Component {
     
@@ -31,7 +32,7 @@ class ColumnRender extends Component {
         let topToDown = [];
         let i = 0;
         let j = 0;
-        for(var traverse = 0; traverse <= 1000; traverse +=25) {
+        for(var traverse = 0; traverse <= 900; traverse +=25) {
             topToDown.push(traverse);
             if(buffer[i].start === traverse ) {
                 traverse += buffer[i].height - 25;
@@ -41,6 +42,7 @@ class ColumnRender extends Component {
             }   
         }
         i = 0;
+        console.log(topToDown);
         return (topToDown.map((item, index) => {
             if(item === buffer[i].start) {
                 (i < buffer.length - 1) ? i++ : null;
@@ -50,20 +52,20 @@ class ColumnRender extends Component {
                 );
             }
 
-            if(item === (buffer[i].start + buffer[i].height) && (item%50 !== 0) ) {
+            if((i > 0) && (item == (buffer[j-1].start + buffer[j-1].height)) && (item%50 !== 0)) {
                 return (
-                        <ListGroupItem style={{height: '25px'}} key={item}></ListGroupItem>
+                        <ListGroupItem style={fillerBlockHeight} key={item}></ListGroupItem>
                );
             }
 
             if(item%50 === 0) {
                 if(topToDown[index+1] === buffer[i].start) {
                     return (
-                            <ListGroupItem style={{height: '25px'}} key={item}></ListGroupItem>
+                            <ListGroupItem style={fillerBlockHeight} key={item}></ListGroupItem>
                     );
                 }
                 return (
-                        <ListGroupItem style={{height: '50px'}} key={item}></ListGroupItem>
+                        <ListGroupItem style={defaultBlockHeight} key={item}></ListGroupItem>
                 );
             }
             return null;
@@ -72,8 +74,8 @@ class ColumnRender extends Component {
     }
     
     render() {
-        return(<div><ListGroup>
-               {this.rendererFunc(data[0])}</ListGroup></div>
+        return(<div>
+               {this.rendererFunc(data[this.props.index])}</div>
                 );
     }
 }   

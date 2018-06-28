@@ -1,17 +1,17 @@
 var data =[ 
         [
         {
-            tag:  'Abs',
+            tag: 'abs',
             text: 'Abs Circuit',
             time: '09:30-10:30'
         },
         {
-            tag:  'Rowing',
+            tag: 'rowing',
             text: 'Rowing Circuit',
             time: '11:00-12:30'
         },
         {
-            tag:  'Yoga',
+            tag: 'yoga',
             text: 'Yoga Level 1',
             time: '14:00-15:15'
         }
@@ -19,22 +19,22 @@ var data =[
         
         [
         {
-            tag:  'Abs',
+            tag: 'abs',
             text: 'Abs Circuit',
             time: '13:30-15:00'
         },
         {
-            tag:  'Rowing',
+            tag: 'rowing',
             text: 'Rowing Circuit',
             time: '10:00-11:00'
         },
         {
-            tag:  'Yoga',
+            tag: 'yoga',
             text: 'Yoga Level 1',
             time: '15:45-16:45'
         },
         {
-            tag: 'Resotorative',
+            tag: 'restorive',
             text: 'Restoration Yoga',
             time: '11:30-13:00'
         }
@@ -42,68 +42,63 @@ var data =[
     
         [
         {
-            tag:  'Abs',
-            text: 'Abs Circuit',
-            time: '09:30-10:30'
+            tag: 'yoga',
+            text: 'Yoga Level 1',
+            time: '13:45-15:00'
         },
         {
-            tag:  'Rowing',
+            tag: 'rowing',
             text: 'Rowing Circuit',
-            time: '11:00-12:30'
+            time: '12:00-13:45'
         },
         {
-            tag:  'Yoga',
+            tag: 'yoga',
             text: 'Yoga Level 1',
             time: '10:45-11:45'
         },
         {
-            tag: 'Resotorative',
+            tag: 'restorive',
             text: 'Restoration Yoga',
             time: '09:00-10:15'
         }
     ], 
         [
         {
-            tag:  'Abs',
+            tag: 'abs',
             text: 'Abs Circuit',
             time: '09:30-10:30'
         },
         {
-            tag:  'Rowing',
+            tag: 'rowing',
             text: 'Rowing Circuit',
-            time: '11:00-12:30'
+            time: '17:00-18:30'
         },
         {
-            tag:  'Yoga',
-            text: 'Yoga Level 1',
-            time: '14:00-15:15'
+            tag: 'abs',
+            text: 'Abs Circuit',
+            time: '15:30-16:30'
         },
         {
-            tag: 'Resotorative',
+            tag: 'restorive',
             text: 'Restoration Yoga',
-            time: '11:30-13:00'
+            time: '12:00-13:45'
         }
     ],
         [
         {
-            tag:  'Abs',
+            tag: 'abs',
             text: 'Abs Circuit',
-            time: '09:30-10:30'
+            time: '12:30-14:00'
         },
         {
-            tag:  'Rowing',
+            tag: 'rowing',
             text: 'Rowing Circuit',
-            time: '11:00-12:30'
+            time: '10:00-11:00'
         },
         {
-            tag:  'Yoga',
+            tag: 'yoga',
             text: 'Yoga Level 1',
-            time: '14:00-15:15'
-        },
-        {
-            tag: 'Resotorative',
-            text: 'Restoration Yoga',
-            time: '11:30-13:00'
+            time: '15:45-16:45'
         }
     ]
     

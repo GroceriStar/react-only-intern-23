@@ -24,7 +24,7 @@ class Modals extends Component {
     render() {
         return(
             <div>
-               <ListGroupItem style={{height : this.props.data.height}} onClick={this.toggle}><div>{this.props.data.time}</div>{this.props.data.text}</ListGroupItem>
+               <ListGroupItem style={{height : this.props.data.height}} className={this.props.data.tag} onClick={this.toggle}><div>{this.props.data.time}</div>{this.props.data.text}</ListGroupItem>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                   <ModalHeader toggle={this.toggle}>{this.props.data.text}</ModalHeader>
                   <ModalBody>

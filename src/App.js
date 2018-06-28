@@ -14,7 +14,7 @@ class App extends Component {
       {/*  <DayChecker /> */}
         <DayChecker />
         <WorkSched />
-                <ColumnRender />
+              
 
         <Calendar />
         <MealPlan />
