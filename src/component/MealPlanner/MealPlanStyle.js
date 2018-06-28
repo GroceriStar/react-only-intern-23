@@ -1,5 +1,6 @@
-let cardWidth = {
-    width: '300px'
+let cardSize = {
+    width: '300px',
+    height: '400px'
 }
 
 let cardHeight = {
@@ -11,4 +12,4 @@ let topMargin = {
 }
 
 
-export { cardWidth, cardHeight, topMargin }
+export { cardSize, cardHeight, topMargin }

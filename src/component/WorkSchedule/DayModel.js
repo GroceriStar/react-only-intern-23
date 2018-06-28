@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { data } from '../../data/Data';
+import { data } from '../../data/Data_WorkSceh';
 import { Modals } from '../Modals/ModalWork';
 import { ListGroupItem, ListGroup } from 'reactstrap';
 import { defaultBlockHeight, fillerBlockHeight } from '../../data/style_vars'
