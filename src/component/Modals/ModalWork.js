@@ -24,7 +24,9 @@ class Modals extends Component {
     render() {
         return(
             <div>
-                <ListGroupItem style={{height : this.props.data.height}} className={this.props.data.tag} onClick={this.toggle}>
+                <ListGroupItem style={{height : this.props.data.height}}
+                  className={this.props.data.tag}
+                  onClick={this.toggle}>
                     <div>
                         {this.props.data.time}
                     </div>{this.props.data.text}
@@ -35,7 +37,9 @@ class Modals extends Component {
                     {dummyText}
                   </ModalBody>
                   <ModalFooter>
-                    <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+                    <Button color="primary" onClick={this.toggle}>
+                      Do Something
+                    </Button>{' '}
                     <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                   </ModalFooter>
                 </Modal>
