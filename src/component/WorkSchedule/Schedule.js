@@ -3,6 +3,7 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 import './WorkSched.css';
 import { weekdayName } from '../../data/days';
 import { ColumnRender } from './DayModel';
+import {  defaultBlockHeight } from '../../data/style_vars'
 
 
 class TimeLine extends Component {
@@ -34,7 +35,7 @@ class ScheduleRender extends Component {
             weekdayName.map((day, index) => 
                 <div key={index} className='data-class'>
                     <ListGroup>
-                        <ListGroupItem style={{height: '50px'}}>{day}</ListGroupItem>
+                        <ListGroupItem style={defaultBlockHeight}>{day}</ListGroupItem>
                         <ColumnRender key={index} index={index} />
                     </ListGroup>
                 </div>
