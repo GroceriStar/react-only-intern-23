@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, {
+  Component 
+} from 'react';
 import { Container, Row } from 'reactstrap';
 import './WorkSched.css';
 import { weekdayName } from '../../data/days'
@@ -9,11 +11,15 @@ class WorkSched extends Component {
               return(
                     <div>
                         <div className='header'>
-                        <h1>Schedule</h1>
+                          <h1>
+                            Schedule
+                          </h1>
                         </div>
                         <Container>
                             <Row>
-                                <div className='timeline'><TimeLine /></div>
+                                <div className='timeline'>
+                                  <TimeLine />
+                                </div>
                                 <ScheduleRender />
                             </Row>
                         </Container>
@@ -21,5 +27,5 @@ class WorkSched extends Component {
                 );
         }
 }
-    
+
 export { WorkSched }
