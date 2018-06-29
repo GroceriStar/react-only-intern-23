@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
-import { Calendar }  from './component/Calendar/Calendar';
-import { MealPlan }  from './component/MealPlanner/MealPlan';
+import { BrowserRouter, Switch, Link, Route } from 'react-router-dom';
+import { Home } from './component/Home'
 import { WorkSched } from './component/WorkSchedule/WorkSched';
-import { DayChecker } from './component/DayChecker';
-import { ColumnRender } from './component/WorkSchedule/DayModel';
 
 
 class App extends Component {
 
   render() {
     return (
-        <div>
-      {/*  <DayChecker /> */}
-        <DayChecker />
-        <WorkSched />
-              
-
-        <Calendar />
-        <MealPlan />
-        </div>
+        <BrowserRouter>
+            <div>
+                <h2>You can choose where to go from here</h2>
+                <ul>
+                    <li><Link to='/Home'>Home</Link></li>
+                    <li><Link to='/Cal'>Calendar</Link></li>
+                </ul>
+                <hr/>
+        
+                <Switch>
+                    <Route exact path='/Home' component={Home} />
+                    <Route exact path='/Cal' component={WorkSched} />
+                </Switch>
+            </div>
+        </BrowserRouter>
     );
   }
 }
