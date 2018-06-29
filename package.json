@@ -9,7 +9,7 @@
     "react-dom": "^16.4.1",
     "react-raven": "^1.2.3",
     "react-scripts": "1.1.4",
-    "reactstrap": "^6.1.0",
+    "reactstrap": "^6.2.0",
     "underscore": "^1.9.1"
   },
   "scripts": {
