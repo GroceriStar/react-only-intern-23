@@ -52,7 +52,9 @@ class ColumnRender extends Component {
                 );
             }
 
-            if((i > 0) && (item == (buffer[j-1].start + buffer[j-1].height)) && (item%50 !== 0)) {
+            if((i > 0) &&
+               (item == (buffer[j-1].start + buffer[j-1].height)) &&
+               (item%50 !== 0)) {
                 return (
                         <ListGroupItem style={fillerBlockHeight} key={item}></ListGroupItem>
                );
