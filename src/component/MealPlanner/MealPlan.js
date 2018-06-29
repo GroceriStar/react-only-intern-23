@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { AddMeal } from './AddMealModal';
+import { AddMeal } from '../Modals/AddMealModal';
 import { Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle, } from 'reactstrap';
+import { cardSize, cardHeight, topMargin } from './MealPlanStyle'
+import { img_url } from '../../data/Images_url'
 
 class MealPlan extends Component {
     constructor(props) {
@@ -13,7 +15,8 @@ class MealPlan extends Component {
             description: '',
             descriptions: [],
             step: '',
-            steps: []
+            steps: [],
+            showAddMealMessage: false
         };
         this.renderMeals       = this.renderMeals.bind(this);
         this.handleClick       = this.handleClick.bind(this);
@@ -33,8 +36,8 @@ class MealPlan extends Component {
                     return (
                         <div>
                         <Col xs='3'>
-                          <Card style={{width: '300px'}}  key={index}>
-                            <CardImg key={index} top width="100%" style={{height: '200px'}}src={this.state.images[index]} alt="This image is not supported" />
+                          <Card style={cardSize}  key={index}>
+                            <CardImg key={index} top width="100%" style={cardHeight} src={this.state.images[index]} alt="This image is not supported" />
                             <CardBody key={index}>
                               <CardTitle>{meal}</CardTitle>
                               <CardText>{this.state.descriptions[index]}</CardText>
@@ -77,11 +80,26 @@ class MealPlan extends Component {
 
     handleClick() {
         this.setState({
-            meals: [...this.state.meals, this.state.meal],
-            images: [...this.state.images, this.state.imgURL],
-            descriptions: [...this.state.descriptions, this.state.description],
-            steps: [...this.state.steps, this.state.step]
+            meals        : [...this.state.meals, this.state.meal],
+            images       : [...this.state.images, this.state.imgURL],
+            descriptions : [...this.state.descriptions, this.state.description],
+            steps        : [...this.state.steps, this.state.step]
         });
+    }
+
+    componentWillMount() {
+        this.setState({
+            meals       : ['Burger', 'Pizza'],
+            images      : img_url,
+            descriptions : ['Burgers are eaten all over the world, and are one of the most handy and easy to make recipy', 'Pizza is a mouth watering dish']
+        })
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.meals.length < this.state.meals.length) {
+            this.setState({showAddMealMessage: true});
+            setTimeout(() => this.setState({showAddMealMessage: false}), 2000);
+        }
     }
 
 
@@ -98,7 +116,8 @@ class MealPlan extends Component {
               handleImage={this.handleImage}
               changeHandle={this.changeHandle}
               handleClick={this.handleClick}  />
-            <div style={{margin: '30px 0px'}}>
+            <div style={topMargin}>
+            <div>{this.state.showAddMealMessage ? <h3>Meal was added</h3> : null}</div>
             <ul>
                 {this.renderMeals()}
             </ul>

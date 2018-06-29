@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {  ListGroup, ListGroupItem } from 'reactstrap';
-import { DataModalAbs, DataModalRowing, DataModalYoga, DataModalRestorive } from '../component/Modals'
+import { DataModalAbs, DataModalRowing, DataModalYoga, DataModalRestorive } from '../Modals/Modals';
+import { weekdayName } from '../../data/days'
 
 
 class TimeLine extends Component {
@@ -29,7 +30,7 @@ class TimeLine extends Component {
 class Day extends Component {
         
     render() { 
-        if(this.props.dayProp === 'Monday') {
+        if(this.props.dayProp === weekdayName[0]) {
             return(
                 <div>
                     <ListGroup>
@@ -54,7 +55,7 @@ class Day extends Component {
             );
         }
         
-        if(this.props.dayProp === 'Tuesday') {
+        if(this.props.dayProp === weekdayName[1]) {
                return(
                 <div>
                     <ListGroup>
@@ -78,7 +79,7 @@ class Day extends Component {
             ); 
         }
         
-        if(this.props.dayProp === 'Wednesday') {
+        if(this.props.dayProp === weekdayName[2]) {
                 return(
                 <div>
                     <ListGroup>
@@ -103,7 +104,7 @@ class Day extends Component {
             );
         }
         
-        if(this.props.dayProp === 'Thursday') {
+        if(this.props.dayProp === weekdayName[3]) {
                 return(
                 <div>
                     <ListGroup>
@@ -127,7 +128,7 @@ class Day extends Component {
             );
         }
         
-        if(this.props.dayProp === 'Friday') {
+        if(this.props.dayProp === weekdayName[4]) {
                 return(
                 <div>
                      <ListGroup>

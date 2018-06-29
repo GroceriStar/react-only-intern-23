@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Calender }  from './component/Calender';
-import { MealPlan }  from './component/MealPlan';
-import { WorkSched } from './component/WorkSched';
-
-
-
+import { Calendar }  from './component/Calendar/Calendar';
+import { MealPlan }  from './component/MealPlanner/MealPlan';
+import { WorkSched } from './component/WorkSchedule/WorkSched';
+import { DayChecker } from './component/DayChecker';
+import { ColumnRender } from './component/WorkSchedule/DayModel';
 
 
 class App extends Component {
@@ -13,9 +12,12 @@ class App extends Component {
     return (
         <div>
       {/*  <DayChecker /> */}
-       <WorkSched />
-        <Calender />
-       <MealPlan />
+        <DayChecker />
+        <WorkSched />
+              
+
+        <Calendar />
+        <MealPlan />
         </div>
     );
   }
