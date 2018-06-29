@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import { CalendarHeader } from './CalendarHeader'
-import { CalendarBody, daysCounterReset } from './CalendarBody';
-
-
+import {
+  CalendarBody,
+  daysCounterReset
+} from './CalendarBody';
 
 import {
   displayDate,
   today
 } from '../../data/DateVars';
 
-import months         from '../../data/months';
+import months from '../../data/months';
 
 
 class Calendar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            month: today.getMonth(),
+            month:    today.getMonth(),
             firstDay: today.getDay()
         }
         this.changeMonth = this.changeMonth.bind(this);
@@ -38,14 +39,14 @@ class Calendar extends Component {
                 });
             }
         }
-        
+
         if(event.target.innerText === 'Previous Month') {
             if(this.state.month === 0) {
                 today.setMonth(11);
                 this.setState({
                     month: 11
                 });
-            } 
+            }
             else {
                 today.setMonth(this.state.month - 1);
                 this.setState({
@@ -53,7 +54,7 @@ class Calendar extends Component {
                 });
             }
         }
-        
+
         this.setState({
             firstDay: today.getDay()
         });
