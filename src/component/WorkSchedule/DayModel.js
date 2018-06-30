@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { data } from '../../data/Data_WorkSceh';
+import { data }   from '../../data/Data_WorkSceh';
 import { Modals } from '../Modals/ModalWork';
 import { ListGroupItem } from 'reactstrap';
 import { defaultBlockHeight, fillerBlockHeight } from '../../data/style_vars'
 
 class ColumnRender extends Component {
-    
+
     getOffset(obj) {
         let timeDiff;
         let timeArray;
@@ -25,7 +25,7 @@ class ColumnRender extends Component {
                     }, []).sort((a, b) => a.start - b.start);
         return inter;
     }
-    
+
     rendererFunc(daySchedule) {
         let buffer = this.getOffset(daySchedule);
         let blockHeight;
@@ -38,9 +38,9 @@ class ColumnRender extends Component {
             if(buffer[i].start === traverse ) {
                 traverse += buffer[i].height - 25;
                 if(i < buffer.length - 1){
-                i++;
+                  i++;
                 }
-            }   
+            }
         }
         i = 0;
         console.log(topToDown);
@@ -53,7 +53,7 @@ class ColumnRender extends Component {
                     j+=1;
                 }
                 return (
-                <Modals data={buffer[j-1]} key={item} />
+                  <Modals data={buffer[j-1]} key={item} />
                 );
             }
 
@@ -91,6 +91,6 @@ class ColumnRender extends Component {
                {this.Schedule()}</div>
                 );
     }
-}   
-    
+}
+
 export { ColumnRender }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { AddMeal } from '../Modals/AddMealModal';
-import { Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle, } from 'reactstrap';
+import {
+  Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle,
+} from 'reactstrap';
 import { cardSize, cardHeight, topMargin } from './MealPlanStyle'
 import { img_url } from '../../data/Images_url'
 
@@ -18,6 +20,7 @@ class MealPlan extends Component {
             steps: [],
             showAddMealMessage: false
         };
+
         this.renderMeals       = this.renderMeals.bind(this);
         this.handleClick       = this.handleClick.bind(this);
         this.changeHandle      = this.changeHandle.bind(this);
@@ -55,42 +58,42 @@ class MealPlan extends Component {
 
 
     changeHandle(event) {
-                this.setState({
-                meal: event.target.value
-                });
+      this.setState({
+        meal: event.target.value
+      });
     }
 
     handleImage(event) {
-        this.setState({
-            imgURL: event.target.value
-        });
+      this.setState({
+        imgURL: event.target.value
+      });
     }
 
     handleDescription(event) {
-        this.setState({
-            description: event.target.value
-        });
+      this.setState({
+        description: event.target.value
+      });
     }
 
     handleSteps(event) {
-        this.setState({
-            'step': event.target.value
-        });
+      this.setState({
+        'step': event.target.value
+      });
     }
 
     handleClick() {
-        this.setState({
-            meals        : [...this.state.meals, this.state.meal],
-            images       : [...this.state.images, this.state.imgURL],
-            descriptions : [...this.state.descriptions, this.state.description],
-            steps        : [...this.state.steps, this.state.step]
-        });
+      this.setState({
+          meals        : [...this.state.meals, this.state.meal],
+          images       : [...this.state.images, this.state.imgURL],
+          descriptions : [...this.state.descriptions, this.state.description],
+          steps        : [...this.state.steps, this.state.step]
+      });
     }
 
     componentWillMount() {
         this.setState({
-            meals       : ['Burger', 'Pizza'],
-            images      : img_url,
+            meals        : ['Burger', 'Pizza'],
+            images       : img_url,
             descriptions : ['Burgers are eaten all over the world, and are one of the most handy and easy to make recipy', 'Pizza is a mouth watering dish']
         })
     }
@@ -117,7 +120,7 @@ class MealPlan extends Component {
               changeHandle={this.changeHandle}
               handleClick={this.handleClick}  />
             <div style={topMargin}>
-            <div>{this.state.showAddMealMessage ? <h3>Meal was added</h3> : null}</div>
+            <div>{ this.state.showAddMealMessage ? <h3>Meal was added</h3> : null }</div>
             <ul>
                 {this.renderMeals()}
             </ul>
