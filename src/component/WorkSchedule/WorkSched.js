@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row } from 'reactstrap';
 import './WorkSched.css';
-import { weekdayName } from '../../data/days'
 import { ScheduleRender, TimeLine } from './Schedule'
 
 class WorkSched extends Component {

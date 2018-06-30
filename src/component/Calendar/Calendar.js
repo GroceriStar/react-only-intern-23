@@ -21,6 +21,7 @@ class Calendar extends Component {
         }
         this.changeMonth = this.changeMonth.bind(this);
     }
+    
 
     changeMonth(event) {
         daysCounterReset();

@@ -34,11 +34,11 @@ class MealPlan extends Component {
                 <Row>
                 {this.state.meals.map((meal, index) => {
                     return (
-                        <div>
+                        <div key={`${index}Div`}>
                         <Col xs='3'>
                           <Card style={cardSize}  key={index}>
                             <CardImg key={index} top width="100%" style={cardHeight} src={this.state.images[index]} alt="This image is not supported" />
-                            <CardBody key={index}>
+                            <CardBody key={`${index}Body`}>
                               <CardTitle>{meal}</CardTitle>
                               <CardText>{this.state.descriptions[index]}</CardText>
                             </CardBody>

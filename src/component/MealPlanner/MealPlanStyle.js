@@ -1,6 +1,7 @@
 let cardSize = {
     width: '300px',
-    height: '400px'
+    height: '400px',
+    margin: '20px 0'
 }
 
 let cardHeight = {
