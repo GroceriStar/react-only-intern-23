@@ -80,7 +80,6 @@ class ColumnRender extends Component {
         })
         );
     }
-<<<<<<< HEAD
     
     Schedule() {
         return this.rendererFunc(data[this.props.index])
@@ -91,15 +90,6 @@ class ColumnRender extends Component {
         return(<div>
                {this.Schedule()}</div>
                 );
-=======
-
-    render() {
-        return (
-              <div>
-                {this.rendererFunc(data[this.props.index])}
-               </div>
-              );
->>>>>>> d163478df8f25f616a4ec3c791d4aad8262ba4ba
     }
 }
 
