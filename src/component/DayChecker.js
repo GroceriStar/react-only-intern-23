@@ -10,11 +10,11 @@ class DayChecker extends Component {
         super(props);
         this.weekCheck = this.weekCheck.bind(this);
     }
-    
+
     getDayName(number) {
-    return days[number];
-      }
-    
+      return days[number];
+    }
+
     weekCheck(dayNum, callback, otherCallback) {
         if (dayNum === 6 || dayNum === 0) {
             if(typeof callback === "function")
@@ -27,9 +27,11 @@ class DayChecker extends Component {
     }
 
     weekend = () => {return (
-        <div style={{...styleVars.header, ...styleVars.defaultTextColor, height: '200px'}}>
+        <div style={{ ...styleVars.header, ...styleVars.defaultTextColor, height: '200px' }}>
             <Header />
-                <h3>Today is {this.getDayName(today)} - You can watch TV all day today!</h3>
+            <h3>
+              Today is {this.getDayName(today)} - You can watch TV all day today!
+            </h3>
         </div>
         );
     }
@@ -48,12 +50,9 @@ class DayChecker extends Component {
                 {this.weekCheck(today, this.weekend, this.weekday)}
             </div>
         );
-    }    
+    }
 
 }
 
 
 export { DayChecker }
-
-
-
