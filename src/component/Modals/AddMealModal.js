@@ -61,7 +61,7 @@ class AddMeal extends Component {
                       </FormGroup>
                      <FormGroup>
                         <Label for="exampleText">Steps</Label>
-                        <Input type="textarea" onBlur={this.props.handleSteps}name="text" id="stepMeal" />
+                        <Input type="textarea" onBlur={this.props.handleSteps} name="text" id="stepMeal" />
                       </FormGroup>
                  </Form>
                 </ModalBody>

@@ -30,7 +30,6 @@ class ColumnRender extends Component {
     rendererFunc(daySchedule) {
         let buffer = this.getOffset(daySchedule);
         let blockHeight;
-        let topToDown = [];
         let i = 0;
         let j = 0;
         
