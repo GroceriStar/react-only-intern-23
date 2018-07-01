@@ -36,10 +36,12 @@ class ColumnRender extends Component {
         
         let topToBottom = _.range(0, 925, 25).reduce((accumulator, item) => {
             accumulator.push(item);
-            if (item > buffer[j].start && item < (buffer[j].start + buffer[j].height)) {
+            if (item > buffer[j].start &&
+                item < (buffer[j].start + buffer[j].height)) {
                 accumulator.pop();
             }
-            if(item > (buffer[j].start + buffer[j].height - 25) && j < buffer.length -1) {j++}
+            if(item > (buffer[j].start + buffer[j].height - 25) &&
+               j < buffer.length -1) {j++}
             return accumulator;
         }, []);
         
@@ -53,7 +55,7 @@ class ColumnRender extends Component {
                     j+=1;
                 }
                 return (
-                  <Modals data={buffer[j-1]} key={item} />
+                  <Modals mode={this.props.mode} data={buffer[j-1]} key={item} />
                 );
             }
 
@@ -66,7 +68,7 @@ class ColumnRender extends Component {
             }
 
             if(item%50 === 0) {
-                if(topToDown[index+1] === buffer[i].start) {
+                if(topToBottom[index+1] === buffer[i].start) {
                     blockHeight = fillerBlockHeight;
                 }
                 else {

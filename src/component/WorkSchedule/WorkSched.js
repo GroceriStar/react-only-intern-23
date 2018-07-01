@@ -3,9 +3,23 @@ import React, {
 } from 'react';
 import { Container, Row } from 'reactstrap';
 import './WorkSched.css';
-import { ScheduleRender, TimeLine } from './Schedule'
+import { ScheduleRender } from './Schedule';
+import { TimeLine } from './Timeline';
 
 class WorkSched extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            mode: false
+        };
+        this.changeMode = this.changeMode.bind(this);
+    }
+    
+    changeMode() {
+        this.setState({
+            mode: !this.state.mode
+        })
+    }
             render() {
               return(
                     <div>
@@ -13,13 +27,14 @@ class WorkSched extends Component {
                           <h1>
                             Schedule
                           </h1>
+                  <button onClick={this.changeMode}>Switch Mode</button>
                         </div>
                         <Container>
                             <Row>
                                 <div className='timeline'>
-                                  <TimeLine />
+                                  <TimeLine mode={this.state.mode}/>
                                 </div>
-                                <ScheduleRender />
+                                <ScheduleRender mode={this.state.mode}/>
                             </Row>
                         </Container>
                     </div>

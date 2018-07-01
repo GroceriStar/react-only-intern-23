@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import {
-  ListGroupItem, Button, Modal, ModalHeader, ModalBody, ModalFooter
+  ListGroupItem,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
 } from 'reactstrap';
 
 
@@ -22,6 +27,28 @@ class Modals extends Component {
             modal: !this.state.modal
         });
     }
+    
+    transformTime(time) {
+        if(this.props.mode) {
+        let timeLapse = time.split('-', 2).map(index => index.split(':', 2));
+        console.log(timeLapse);
+        if(timeLapse[1][0] > 12) {
+            timeLapse[1][0] -= 12;
+            timeLapse[1][0] ='0' + timeLapse[1][0];
+        }
+        if(timeLapse[0][0] > 12) {
+            timeLapse[0][0] -= 12;
+            timeLapse[0][0] ='0' + timeLapse[0][0];
+        }
+        let result = timeLapse.map(index => index.join(':')).join('-');
+        return result;
+        
+        }
+        else {
+            return time;
+        }
+    }
+    
 
     render() {
         return(
@@ -30,7 +57,7 @@ class Modals extends Component {
                   className={this.props.data.tag}
                   onClick={this.toggle}>
                     <div>
-                        {this.props.data.time}
+                        {this.transformTime(this.props.data.time)}
                     </div>{this.props.data.text}
                 </ListGroupItem>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
