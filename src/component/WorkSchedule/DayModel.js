@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { data }   from '../../data/Data_WorkSceh';
 import { Modals } from '../Modals/ModalWork';
 import { ListGroupItem } from 'reactstrap';
-import { defaultBlockHeight, fillerBlockHeight } from '../../data/style_vars'
+import { defaultBlockHeight, fillerBlockHeight } from '../../data/style_vars';
+import _ from 'underscore';
 
 class ColumnRender extends Component {
 
@@ -32,19 +33,18 @@ class ColumnRender extends Component {
         let topToDown = [];
         let i = 0;
         let j = 0;
-                
-        for(var traverse = 0; traverse <= 900; traverse +=25) {
-            topToDown.push(traverse);
-            if(buffer[i].start === traverse ) {
-                traverse += buffer[i].height - 25;
-                if(i < buffer.length - 1){
-                  i++;
-                }
+        
+        let topToBottom = _.range(0, 925, 25).reduce((accumulator, item) => {
+            accumulator.push(item);
+            if (item > buffer[j].start && item < (buffer[j].start + buffer[j].height)) {
+                accumulator.pop();
             }
-        }
-        i = 0;
-        console.log(topToDown);
-        return (topToDown.map((item, index) => {
+            if(item > (buffer[j].start + buffer[j].height - 25) && j < buffer.length -1) {j++}
+            return accumulator;
+        }, []);
+        
+        j = 0;
+        return (topToBottom.map((item, index) => {
             if(item === buffer[i].start) {
                 if (i < buffer.length - 1) { 
                     i+=1;
