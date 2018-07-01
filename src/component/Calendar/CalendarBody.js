@@ -4,7 +4,7 @@ import * as styleVars from '../../data/style_vars';
 import maxDaysOfMonth from '../../data/maxDaysOfMonth';
 
 
-let daysCounter = 0;
+let daysCounter;
 const daysCounterReset = function() {
     daysCounter = 0;
 }
@@ -12,6 +12,7 @@ const daysCounterReset = function() {
 class CalendarBody extends Component {
     
     calRenderCheck() {
+        daysCounterReset();
         return Object.keys(days).map(index => {
             if(index < this.props.firstDay) {
             return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#bbb'}}>
@@ -37,8 +38,8 @@ class CalendarBody extends Component {
                                  }
              else {
              return null;
-                                     }
-             }
+                }
+            }
         )
     }
     
