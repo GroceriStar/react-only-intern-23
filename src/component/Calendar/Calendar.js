@@ -13,6 +13,7 @@ import {
 import months from '../../data/months';
 
 
+
 class Calendar extends Component {
     constructor(props) {
         super(props);
@@ -26,32 +27,33 @@ class Calendar extends Component {
 
     changeMonth(event) {
         daysCounterReset();
+        const currentMonth = this.state.month;
         if(event.target.innerText === 'Next Month') {
-                if(this.state.month === 11) {
+                if(currentMonth === 11) {
                 today.setMonth(0);
                 this.setState({
                    month: 0
                 });
             } 
             else {
-                today.setMonth(this.state.month + 1);
+                today.setMonth(currentMonth + 1);
                 this.setState({
-                  month: this.state.month + 1
+                  month: currentMonth + 1
                 });
             }
         }
 
         if(event.target.innerText === 'Previous Month') {
-            if(this.state.month === 0) {
+            if(currentMonth === 0) {
                 today.setMonth(11);
                 this.setState({
                     month: 11
                 });
             }
             else {
-                today.setMonth(this.state.month - 1);
+                today.setMonth(currentMonth - 1);
                 this.setState({
-                  month: this.state.month - 1
+                  month: currentMonth - 1
                 });
             }
         }

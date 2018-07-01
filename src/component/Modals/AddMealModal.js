@@ -24,7 +24,7 @@ class AddMeal extends Component {
 
     }
 
-    toggle = function() {
+    toggle() {
         this.setState({
             modal: !this.state.modal
         });
