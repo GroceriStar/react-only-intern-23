@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { AddMeal } from '../Modals/AddMealModal';
 import {
-  Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle,
+  Container,
+  Row 
 } from 'reactstrap';
-import { cardSize, cardHeight, topMargin } from './MealPlanStyle'
-import { img_url } from '../../data/Images_url';
+import { topMargin } from './MealPlanStyle'
 import { MealCard } from './Cards';
 import { mealInit } from '../../data/MealData'
 

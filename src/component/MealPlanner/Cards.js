@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import {
-  Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle,
+  Col, 
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle
 } from 'reactstrap';
-import { cardSize, cardHeight, topMargin } from './MealPlanStyle';
+import { cardSize, cardHeight } from './MealPlanStyle';
 
 
 class MealCard extends Component {
