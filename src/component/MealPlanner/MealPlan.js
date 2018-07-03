@@ -4,20 +4,16 @@ import {
   Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle,
 } from 'reactstrap';
 import { cardSize, cardHeight, topMargin } from './MealPlanStyle'
-import { img_url } from '../../data/Images_url'
+import { img_url } from '../../data/Images_url';
+import { MealCard } from './Cards';
+import { mealInit } from '../../data/MealData'
 
 class MealPlan extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            meal: '',
+            meal: {},
             meals: [],
-            imgURL: '',
-            images: [],
-            description: '',
-            descriptions: [],
-            step: '',
-            steps: [],
             showAddMealMessage: false
         };
 
@@ -37,17 +33,7 @@ class MealPlan extends Component {
                 <Row>
                 {this.state.meals.map((meal, index) => {
                     return (
-                        <div key={`${index}Div`}>
-                        <Col xs='3'>
-                          <Card style={cardSize}  key={index}>
-                            <CardImg key={index} top width="100%" style={cardHeight} src={this.state.images[index]} alt="This image is not supported" />
-                            <CardBody key={`${index}Body`}>
-                              <CardTitle>{meal}</CardTitle>
-                              <CardText>{this.state.descriptions[index]}</CardText>
-                            </CardBody>
-                          </Card>
-                        </Col>
-                        </div>
+                        <MealCard key={index} mealprop={meal} />
                       );
                 })}
                 </Row>
@@ -59,42 +45,37 @@ class MealPlan extends Component {
 
     changeHandle(event) {
       this.setState({
-        meal: event.target.value
+        meal: {...this.state.meal, name: event.target.value}
       });
     }
 
     handleImage(event) {
       this.setState({
-        imgURL: event.target.value
+        meal: {...this.state.meal, image: event.target.value}
       });
     }
 
     handleDescription(event) {
       this.setState({
-        description: event.target.value
+        meal: {...this.state.meal, description: event.target.value}
       });
     }
 
     handleSteps(event) {
       this.setState({
-        'step': event.target.value
+        meal: {...this.state.meal, step: event.target.value}
       });
     }
 
     handleClick() {
       this.setState({
-          meals        : [...this.state.meals, this.state.meal],
-          images       : [...this.state.images, this.state.imgURL],
-          descriptions : [...this.state.descriptions, this.state.description],
-          steps        : [...this.state.steps, this.state.step]
+          meals        : [...this.state.meals, this.state.meal]
       });
     }
 
     componentWillMount() {
         this.setState({
-            meals        : ['Burger', 'Pizza'],
-            images       : img_url,
-            descriptions : ['Burgers are eaten all over the world, and are one of the most handy and easy to make recipy', 'Pizza is a mouth watering dish']
+          meals        : mealInit
         })
     }
 
