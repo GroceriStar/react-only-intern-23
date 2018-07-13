@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import { data }   from '../../data/Data_WorkSceh';
+import React from 'react';
+import _ from 'underscore';
 import { Modals } from '../Modals/ModalWork';
 import { ListGroupItem } from 'reactstrap';
 import { defaultBlockHeight, fillerBlockHeight } from '../../data/style_vars';
-import _ from 'underscore';
 
-class ColumnRender extends Component {
 
-    getOffset(obj) {
+function getOffset(obj) {
         let timeDiff;
         let timeArray;
         let startLocation;
@@ -27,8 +25,8 @@ class ColumnRender extends Component {
         return inter;
     }
 
-    rendererFunc(daySchedule) {
-        let buffer = this.getOffset(daySchedule);
+function rendererFunc(daySchedule, mode) {
+        let buffer = getOffset(daySchedule);
         let blockHeight;
         let i = 0;
         let j = 0;
@@ -54,7 +52,7 @@ class ColumnRender extends Component {
                     j+=1;
                 }
                 return (
-                  <Modals mode={this.props.mode} data={buffer[j-1]} key={item} />
+                  <Modals mode={mode} data={buffer[j-1]} key={item} />
                 );
             }
 
@@ -81,17 +79,5 @@ class ColumnRender extends Component {
         })
         );
     }
-    
-    Schedule() {
-        return this.rendererFunc(data[this.props.index])
-    }
-    
-    
-    render() {
-        return(<div>
-               {this.Schedule()}</div>
-                );
-    }
-}
 
-export { ColumnRender }
+export { rendererFunc }

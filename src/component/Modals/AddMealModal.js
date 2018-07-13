@@ -7,20 +7,20 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  Label,
-  Input,
-  Form,
-  FormGroup
+  FormGroup,
 } from 'reactstrap';
+
+import { AvForm, AvField } from 'availity-reactstrap-validation';
 
 class AddMeal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            modal: false
+            modal: false,
+            valid: 'invalid'
         };
         this.toggle = this.toggle.bind(this);
-        this.clickHandle = this.clickHandle.bind(this);
+        this.handleValidSubmit = this.handleValidSubmit.bind(this);
 
     }
 
@@ -29,7 +29,8 @@ class AddMeal extends Component {
             modal: !this.state.modal
         });
     }
-    clickHandle() {
+    
+    handleValidSubmit() {
         this.props.handleClick();
         this.toggle();
     }
@@ -42,28 +43,24 @@ class AddMeal extends Component {
               Add Meal
             </Button>
             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                <AvForm onValidSubmit={this.handleValidSubmit} >
                 <ModalHeader toggle={this.toggle}>
                   Add a meal
                 </ModalHeader>
                 <ModalBody>
-                  <Form>
-                     <FormGroup>
-                        <Label>Meal Name</Label>
-                        <Input type="text" onBlur={this.props.changeHandle} id="mealName" placeholder="Meal name here" />
-                      </FormGroup>
-                     <FormGroup>
-                        <Label>You can also attach an image to your meal</Label>
-                        <Input type="text" onBlur={this.props.handleImage} id="mealImage" placeholder="Image URL here" />
-                      </FormGroup>
-                     <FormGroup>
-                        <Label for="exampleText">Description</Label>
-                        <Input type="textarea" onBlur={this.props.handleDescription} name="text" id="descMeal" />
-                      </FormGroup>
-                     <FormGroup>
-                        <Label for="exampleText">Steps</Label>
-                        <Input type="textarea" onBlur={this.props.handleSteps} name="text" id="stepMeal" />
-                      </FormGroup>
-                 </Form>
+                    <FormGroup>
+                        <AvField name="meal" pattern="^[A-Z][A-Za-z' -]+" label="Meal Name" type="text" required />
+                    </FormGroup>
+                    <FormGroup>
+                        <AvField name="imageURL" label="Image URL here" type="URL" required />
+                    </FormGroup>
+                    <FormGroup>
+                        <AvField name="description" label="Description" type="textArea" required />
+                    </FormGroup>
+                    <FormGroup>
+                        <AvField name="Steps" label="Steps for recipy" type="textArea" />
+                    </FormGroup>
+                 
                 </ModalBody>
                 <ModalFooter>
                   <Button color="primary" onClick={this.clickHandle}>
@@ -73,6 +70,7 @@ class AddMeal extends Component {
                     Cancel
                   </Button>
                 </ModalFooter>
+                </AvForm>
               </Modal>
            </div>
         );

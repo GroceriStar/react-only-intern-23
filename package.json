@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "availity-reactstrap-validation": "^2.0.2",
     "bootstrap": "^4.1.1",
     "raven-js": "^3.26.3",
     "react": "^16.4.1",
@@ -18,7 +19,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
