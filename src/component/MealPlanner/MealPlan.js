@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AddMeal } from '../Modals/AddMealModal';
+import { AddMeal, multiVal } from '../Modals/AddMealModal';
 import {
   Container,
   Row 
@@ -14,6 +14,7 @@ class MealPlan extends Component {
         this.state = {
             meal: {},
             meals: [],
+            ingredients: [],
             showAddMealMessage: false
         };
 
@@ -23,6 +24,7 @@ class MealPlan extends Component {
         this.handleImage       = this.handleImage.bind(this);
         this.handleDescription = this.handleDescription.bind(this);
         this.handleSteps       = this.handleSteps.bind(this);
+        this.handleIngredients = this.handleIngredients.bind(this);
 
     }
 
@@ -55,6 +57,12 @@ class MealPlan extends Component {
       });
     }
 
+    handleIngredients() {
+        this.setState({
+            meal: {...this.state.meal, ingredients: multiVal}
+        });
+    }
+
     handleDescription(event) {
       this.setState({
         meal: {...this.state.meal, description: event.target.value}
@@ -71,6 +79,7 @@ class MealPlan extends Component {
       this.setState({
           meals        : [...this.state.meals, this.state.meal]
       });
+        console.log(this.state.meal)
     }
 
     componentWillMount() {
@@ -99,7 +108,8 @@ class MealPlan extends Component {
               handleDescription={this.handleDescription}
               handleImage={this.handleImage}
               changeHandle={this.changeHandle}
-              handleClick={this.handleClick}  />
+              handleClick={this.handleClick}
+              handleIngredients={this.handleIngredients}/>
             <div style={topMargin}>
             <div>{ this.state.showAddMealMessage ? <h3>Meal was added</h3> : null }</div>
             <ul>
