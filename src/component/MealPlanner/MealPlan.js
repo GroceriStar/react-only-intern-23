@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { AddMeal, multiVal } from '../Modals/AddMealModal';
+import { AddMeal } from '../Modals/AddMealModal';
 import {
   Container,
   Row 
 } from 'reactstrap';
 import { topMargin } from './MealPlanStyle'
 import { MealCard } from './Cards';
-import { mealInit } from '../../data/MealData'
+import { multiVal } from './Ingredients';
+import { mealInit } from '../../data/MealData';
 
 class MealPlan extends Component {
     constructor(props) {

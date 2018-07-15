@@ -9,34 +9,24 @@ import {
   ModalFooter,
   FormGroup,
 } from 'reactstrap';
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
+import { Ingredient } from '../MealPlanner/Ingredients';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 
-let multiVal;
 
 class AddMeal extends Component {
     constructor(props) {
         super(props);
         this.state = {
             modal: false,
-            multiValue: [],
-            options: [
-                    { value: 'Salt', label: 'Salt' },
-                    { value: 'Sugar', label: 'Sugar'},
-                    { value: 'Bread', label: 'Bread'}
-            ]
         };
         this.toggle = this.toggle.bind(this);
         this.handleValidSubmit = this.handleValidSubmit.bind(this);
-        this.handleOnChange = this.handleOnChange.bind(this);
 
     }
 
     toggle() {
         this.setState({
-            modal: !this.state.modal,
-            multiValue: []
+            modal: !this.state.modal
         });
     }
     
@@ -44,18 +34,8 @@ class AddMeal extends Component {
         this.props.handleClick();
         this.toggle();
     }
-    
-    handleOnChange(value) {
-        this.setState({
-            multiValue: value
-        });
-    }
-    
-    
 
-
-    render() {         multiVal = this.state.multiValue;
- 
+    render() { 
         return(
           <div>
             <Button onClick={this.toggle}>
@@ -73,16 +53,7 @@ class AddMeal extends Component {
                     <FormGroup>
                         <AvField onBlur={this.props.handleImage} name="imageURL" label="Image URL here" type="URL" required />
                     </FormGroup>
-                    <div>Ingredients
-                    <Select.Creatable
-                        multi={true}
-                        options={this.state.options}
-                        onChange={this.handleOnChange}
-                        value={this.state.multiValue}
-                        showNewOptionAtTop={true}
-                        onBlur={this.props.handleIngredients}
-                    />
-                    </div>
+                    <Ingredient handleIngredients={this.props.handleIngredients} />
                     <FormGroup>
                         <AvField onBlur={this.props.handleDescription} name="description" label="Description" type="textArea" placeholder='Description' required />
                     </FormGroup>
@@ -105,4 +76,4 @@ class AddMeal extends Component {
     }
 }
 
-export { AddMeal, multiVal }
+export { AddMeal }
