@@ -1,21 +1,27 @@
 let header = {
-    backgroundColor: '#222'
+  backgroundColor: '#222'
 }
 let defaultTextColor = {
-    color: '#fff'
+  color: '#fff'
 }
 let defaultBlockHeight = {
-    height: '50px'
+  height: '50px'
 }
 
 let fillerBlockHeight = {
-    height: '25px'
+  height: '25px'
 }
 
 let blockSize = {
-    width: '100px',
-    height: '50px'
+  width: '100px',
+  height: '50px'
 }
 
 
-export { header, defaultTextColor, blockSize, defaultBlockHeight, fillerBlockHeight }
+export {
+  header,
+  defaultTextColor,
+  blockSize,
+  defaultBlockHeight,
+  fillerBlockHeight
+}

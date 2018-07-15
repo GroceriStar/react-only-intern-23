@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import { weekdayName } from '../../data/days';
-import { ColumnRender } from './DayModel';
+import { ColumnRender } from './ColumnRender';
 import {  defaultBlockHeight } from '../../data/style_vars'
 
 
