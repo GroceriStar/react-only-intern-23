@@ -6,11 +6,14 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter,
-  FormGroup,
+  ModalFooter
 } from 'reactstrap';
+import { AvForm } from 'availity-reactstrap-validation';
+import { MealName } from '../FormFields/MealName';
 import { Ingredient } from '../MealPlanner/Ingredients';
-import { AvForm, AvField } from 'availity-reactstrap-validation';
+import { ImageURL } from '../FormFields/MealImage';
+import { Steps } from '../FormFields/MealSteps';
+import { Description } from '../FormFields/MealDescription';
 
 
 class AddMeal extends Component {
@@ -47,19 +50,11 @@ class AddMeal extends Component {
                   Add a meal
                 </ModalHeader>
                 <ModalBody>
-                    <FormGroup>
-                        <AvField onBlur={this.props.changeHandle} name="meal" pattern="^[A-Z][A-Za-z' -]+" label="Meal Name" type="text" required />
-                    </FormGroup>
-                    <FormGroup>
-                        <AvField onBlur={this.props.handleImage} name="imageURL" label="Image URL here" type="URL" required />
-                    </FormGroup>
-                    <Ingredient handleIngredients={this.props.handleIngredients} />
-                    <FormGroup>
-                        <AvField onBlur={this.props.handleDescription} name="description" label="Description" type="textArea" placeholder='Description' required />
-                    </FormGroup>
-                    <FormGroup>
-                        <AvField onBlur={this.props.handleSteps} name="Steps" label="Steps for recipy" type="textArea" />
-                    </FormGroup>                 
+                  <MealName changeHandle={this.props.changeHandle} />
+                  <ImageURL handleImage={this.props.handleImage} />
+                  <Ingredient handleIngredients={this.props.handleIngredients} />
+                  <Steps handleSteps={this.props.handleSteps} />
+                  <Description handleDescription={this.props.handleDescription} />
                 </ModalBody>
                 <ModalFooter>
                   <Button color="primary" onClick={this.clickHandle}>
