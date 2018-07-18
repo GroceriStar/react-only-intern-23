@@ -25,6 +25,7 @@ class MealCard extends Component {
             );
         
     }
+    
     render() {
         return(
         <div>

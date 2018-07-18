@@ -12,7 +12,7 @@ const mealInit = [{
     }, {
       value: 'Butter'
     }],
-    description: 'Burgers are eaten all over the world, and are one of the most handy and easy to make recipy'
+    description: 'Burgers are eaten all over the world, and are one of the most handy and easy to make recipy.'
   },
   {
     name: 'Pizza',
@@ -24,7 +24,7 @@ const mealInit = [{
     }, {
       value: 'Onions'
     }],
-    description: 'Pizza is a mouth watering dish'
+    description: 'Pizza is a mouth watering dish.'
   }
 ];
 
