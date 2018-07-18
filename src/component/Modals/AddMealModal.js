@@ -9,11 +9,8 @@ import {
   ModalFooter
 } from 'reactstrap';
 import { AvForm } from 'availity-reactstrap-validation';
-import { MealName } from '../FormFields/MealName';
-import { Ingredient } from '../MealPlanner/Ingredients';
-import { ImageURL } from '../FormFields/MealImage';
-import { Steps } from '../FormFields/MealSteps';
-import { Description } from '../FormFields/MealDescription';
+import { MealForm } from '../MealPlanner/Form'
+
 
 
 class AddMeal extends Component {
@@ -50,11 +47,19 @@ class AddMeal extends Component {
                   Add a meal
                 </ModalHeader>
                 <ModalBody>
-                  <MealName changeHandle={this.props.changeHandle} />
-                  <ImageURL handleImage={this.props.handleImage} />
-                  <Ingredient handleIngredients={this.props.handleIngredients} />
-                  <Steps handleSteps={this.props.handleSteps} />
-                  <Description handleDescription={this.props.handleDescription} />
+                  <MealForm
+                    changeHandle={this.props.changeHandle}
+                    handleImage={this.props.handleImage}
+                    handleIngredients={this.props.handleIngredients}
+                    handleSteps={this.props.handleSteps}
+                    handleDescription={this.props.handleDescription}
+                    handleDiet={this.props.handleDiet}
+                    handleAllergy={this.props.handleAllergy}
+                    handleCourse={this.props.handleCourse}
+                    handleCuisine={this.props.handleCuisine}
+                    handleDays={this.props.handleDays}
+                    handleHoliday={this.props.handleHoliday}
+                  />
                 </ModalBody>
                 <ModalFooter>
                   <Button color="primary" onClick={this.clickHandle}>
