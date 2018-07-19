@@ -3,7 +3,19 @@ import React, {
  } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import data from '@groceristar/groceristar-fetch/search';
 
+function toOpt(arr) {
+    let Opt= arr.reduce((intermediate, item, index) => {
+        intermediate[index]={};
+        intermediate[index].value = index;
+        intermediate[index].label = item;
+        return intermediate;
+    }, []);
+    return Opt;
+}
+
+const Options = toOpt(data.getCuisines());
 let cuisine;
 
 class Cuisine extends Component {
@@ -11,11 +23,7 @@ class Cuisine extends Component {
         super(props);
         this.state = {
             value: undefined,
-            options: [
-                    { value: 'Chinese', label: 'Chinese-Cuisine' },
-                    { value: 'Italian', label: 'Italian-Cuisine'},
-                    { value: 'Indian', label: 'Indian-Cuisine'}
-            ]
+            options: Options
         };
 
         this.handleOnChange = this.handleOnChange.bind(this);

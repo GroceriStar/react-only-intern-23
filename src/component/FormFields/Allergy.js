@@ -3,8 +3,19 @@ import React, {
  } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
-import data from '@groceristar/groceristar-fetch';
-console.log(data.getAllergies())
+import data from '@groceristar/groceristar-fetch/search';
+
+function toOpt(arr) {
+    let Opt= arr.reduce((intermediate, item, index) => {
+        intermediate[index]={};
+        intermediate[index].value = index;
+        intermediate[index].label = item;
+        return intermediate;
+    }, []);
+    return Opt;
+}
+
+const Options = toOpt(data.getAllergies());
 
 let allergy;
 
@@ -13,11 +24,7 @@ class Allergy extends Component {
         super(props);
         this.state = {
             value: undefined,
-            options: [
-                    { value: 'G-F', label: 'Gluten' },
-                    { value: 'L-F', label: 'Lactose'},
-                    { value: 'E-F', label: 'Egg'}
-            ]
+            options: Options
         };
 
         this.handleOnChange = this.handleOnChange.bind(this);
