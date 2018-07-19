@@ -8,7 +8,9 @@ class Description extends Component {
     render() {
         return(
         <FormGroup>
-          <AvField onBlur={this.props.handleDescription} name="description" label="Description" type="textArea" placeholder='Description' required />
+          <AvField onBlur={this.props.handleDescription}
+          name="description" label="Description" type="textArea"
+          placeholder='Description' required />
         </FormGroup>
         );
     }

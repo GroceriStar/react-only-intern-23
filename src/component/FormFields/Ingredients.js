@@ -7,7 +7,7 @@ import 'react-select/dist/react-select.css';
 let multiVal;
 
 
-class Ingredient extends Component{
+class Ingredient extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,17 +18,17 @@ class Ingredient extends Component{
                     { value: 'Bread', label: 'Bread'}
             ]
         };
-        
+
         this.handleOnChange = this.handleOnChange.bind(this);
     }
-    
+
     handleOnChange(value) {
         this.setState({
             multiValue: value
         });
     }
-    
-    render() { 
+
+    render() {
         multiVal = this.state.multiValue;
         return(
             <div>Ingredients

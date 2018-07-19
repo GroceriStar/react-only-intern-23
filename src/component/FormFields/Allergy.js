@@ -6,7 +6,7 @@ import 'react-select/dist/react-select.css';
 
 let allergy;
 
-class Allergy extends Component{
+class Allergy extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,16 +17,16 @@ class Allergy extends Component{
                     { value: 'E-F', label: 'Egg'}
             ]
         };
-        
+
         this.handleOnChange = this.handleOnChange.bind(this);
     }
-    
+
     handleOnChange(value) {
         this.setState({
             value
         });
     }
-    
+
     render() {
         allergy = this.state.value;
         return(

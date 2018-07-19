@@ -9,7 +9,8 @@ class ImageURL extends Component {
     render() {
         return(
         <FormGroup>
-          <AvField onBlur={this.props.handleImage} name="imageURL" label="Image URL here" type="URL" required />
+          <AvField onBlur={this.props.handleImage} name="imageURL"
+          label="Image URL here" type="URL" required />
         </FormGroup>
         );
     }

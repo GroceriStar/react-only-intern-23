@@ -7,7 +7,7 @@ import 'react-select/dist/react-select.css';
 let holidays;
 
 
-class Holiday extends Component{
+class Holiday extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,17 +18,17 @@ class Holiday extends Component{
                     { value: 'P-Day', label: 'Presidents\' Day'}
             ]
         };
-        
+
         this.handleOnChange = this.handleOnChange.bind(this);
     }
-    
+
     handleOnChange(value) {
         this.setState({
             multiValue: value
         });
     }
-    
-    render() { 
+
+    render() {
         holidays = this.state.multiValue;
         return(
             <div>Holidays

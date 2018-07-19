@@ -9,7 +9,8 @@ class Steps extends Component {
     render() {
         return(
         <FormGroup>
-          <AvField onBlur={this.props.handleSteps} name="Steps" label="Steps for recipy" type="textArea" />
+          <AvField onBlur={this.props.handleSteps} name="Steps" label="Steps for recipe" 
+          type="textArea" />
         </FormGroup>
         );
     }

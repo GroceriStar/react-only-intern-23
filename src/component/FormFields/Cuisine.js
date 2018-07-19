@@ -6,7 +6,7 @@ import 'react-select/dist/react-select.css';
 
 let cuisine;
 
-class Cuisine extends Component{
+class Cuisine extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,16 +17,16 @@ class Cuisine extends Component{
                     { value: 'Indian', label: 'Indian-Cuisine'}
             ]
         };
-        
+
         this.handleOnChange = this.handleOnChange.bind(this);
     }
-    
+
     handleOnChange(value) {
         this.setState({
             value
         });
     }
-    
+
     render() {
         cuisine = this.state.value;
         return(
