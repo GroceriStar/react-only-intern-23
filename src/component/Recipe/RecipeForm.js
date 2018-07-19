@@ -13,7 +13,7 @@ const onSubmit = async values => {
 const required = value => (value ? undefined : "Required");
 
 
-class Recipy extends Component {
+class Recipe extends Component {
     render() {
         return(
             <div>
@@ -62,4 +62,4 @@ class Recipy extends Component {
 }
 
 
-export { Recipy }
+export { Recipe }
