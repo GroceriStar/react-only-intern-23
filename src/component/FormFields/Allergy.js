@@ -3,7 +3,8 @@ import React, {
  } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
-
+import data from '@groceristar/groceristar-fetch';
+console.log(data.getAllergies())
 let allergy;
 
 class Allergy extends Component {
