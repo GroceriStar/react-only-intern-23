@@ -3,32 +3,41 @@ import React, {
  } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import data from '@groceristar/groceristar-fetch/search';
+
+function toOpt(arr) {
+    let Opt= arr.reduce((intermediate, item, index) => {
+        intermediate[index]={};
+        intermediate[index].value = index;
+        intermediate[index].label = item;
+        return intermediate;
+    }, []);
+    return Opt;
+}
+
+const Options = toOpt(data.getHolidays());
 
 let holidays;
 
 
-class Holiday extends Component{
+class Holiday extends Component {
     constructor(props) {
         super(props);
         this.state = {
             multiValue: [],
-            options: [
-                    { value: 'Halloween', label: 'Halloween\'s Day' },
-                    { value: 'M-Day', label: 'Martin Luther King Jr. Day'},
-                    { value: 'P-Day', label: 'Presidents\' Day'}
-            ]
+            options: Options
         };
-        
+
         this.handleOnChange = this.handleOnChange.bind(this);
     }
-    
+
     handleOnChange(value) {
         this.setState({
             multiValue: value
         });
     }
-    
-    render() { 
+
+    render() {
         holidays = this.state.multiValue;
         return(
             <div>Holidays

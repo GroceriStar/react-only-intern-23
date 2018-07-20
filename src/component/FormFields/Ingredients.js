@@ -3,32 +3,42 @@ import React, {
  } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import data from '@groceristar/groceristar-fetch/search';
+
+function toOpt(arr) {
+    let Opt= arr.reduce((intermediate, item, index) => {
+        intermediate[index]={};
+        intermediate[index].value = index;
+        intermediate[index].label = item;
+        return intermediate;
+    }, []);
+    return Opt;
+}
+
+const Options = toOpt(data.getIngredients1());
+
 
 let multiVal;
 
 
-class Ingredient extends Component{
+class Ingredient extends Component {
     constructor(props) {
         super(props);
         this.state = {
             multiValue: [],
-            options: [
-                    { value: 'Salt', label: 'Salt' },
-                    { value: 'Sugar', label: 'Sugar'},
-                    { value: 'Bread', label: 'Bread'}
-            ]
+            options: Options
         };
-        
+
         this.handleOnChange = this.handleOnChange.bind(this);
     }
-    
+
     handleOnChange(value) {
         this.setState({
             multiValue: value
         });
     }
-    
-    render() { 
+
+    render() {
         multiVal = this.state.multiValue;
         return(
             <div>Ingredients

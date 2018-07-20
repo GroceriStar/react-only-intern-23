@@ -8,7 +8,8 @@ class MealName extends Component {
     render() {
         return(
         <FormGroup>
-          <AvField onBlur={this.props.changeHandle} name="meal" pattern="^[A-Z][A-Za-z' -]+" label="Meal Name" type="text" required />
+          <AvField onBlur={this.props.changeHandle} name="meal"
+          pattern="^[A-Z][A-Za-z' -]+" label="Meal Name" type="text" required />
         </FormGroup>
         );
     }
