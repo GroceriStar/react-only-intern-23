@@ -6,12 +6,13 @@ import { Ingredient } from '../FormFields/Ingredients';
 import { ImageURL } from '../FormFields/MealImage';
 import { Steps } from '../FormFields/MealSteps';
 import { Description } from '../FormFields/MealDescription';
-import { Diets } from '../FormFields/Diets';
-import { Allergy } from '../FormFields/Allergy';
-import { Course } from '../FormFields/Course';
-import { Cuisine } from '../FormFields/Cuisine';
+//import { Diets } from '../FormFields/Diets';
+//import { Allergy } from '../FormFields/Allergy';
+//import { Course } from '../FormFields/Course';
+//import { Cuisine } from '../FormFields/Cuisine';
 import { MealDay } from '../FormFields/MealDay';
-import { Holiday } from '../FormFields/Holiday'
+//import { Holiday } from '../FormFields/Holiday';
+import { Attribute } from '../FormFields/Attribute';
 
 class MealForm extends Component {
     render() {
@@ -22,12 +23,12 @@ class MealForm extends Component {
               <Ingredient handleIngredients={this.props.handleIngredients} />
               <Steps handleSteps={this.props.handleSteps} />
               <Description handleDescription={this.props.handleDescription} />
-              <Diets handleDiet={this.props.handleDiet} />
-              <Allergy handleAllergy={this.props.handleAllergy} />
-              <Course handleCourse={this.props.handleCourse} />
-              <Cuisine handleCuisine={this.props.handleCuisine} />
+              <Attribute type='Diet' handleAttribute={this.props.handleDiet} />
+              <Attribute type='Allergy' handleAttribute={this.props.handleAllergy} />
+              <Attribute type='Course' handleAttribute={this.props.handleCourse} />
+              <Attribute type='Cuisine' handleAttribute={this.props.handleCuisine} />
               <MealDay handleDays={this.props.handleDays} />
-              <Holiday handleHoliday={this.props.handleHoliday} />
+              <Attribute type='Holiday' handleAttribute={this.props.handleHoliday} />
             </div>
         );
     }
