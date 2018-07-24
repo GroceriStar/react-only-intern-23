@@ -1,8 +1,8 @@
 import React, {
    Component
  } from 'react';
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
+import CreatableSelect from 'react-select/lib/Creatable';
+
 import data from '@groceristar/groceristar-fetch/search';
 
 let attribute;
@@ -10,7 +10,7 @@ let attribute;
 function toOpt(arr) {
     let Opt= arr.reduce((intermediate, item, index) => {
         intermediate[index]={};
-        intermediate[index].value = index;
+        intermediate[index].value = index.toString();
         intermediate[index].label = item;
         return intermediate;
     }, []);
@@ -23,22 +23,25 @@ function toOpt(arr) {
 class Attribute extends Component {
   constructor(props) {
         super(props);
-        this.state = {
-            value: undefined,
-            options: []
-        };
-
-        this.handleOnChange = this.handleOnChange.bind(this);
         this.getAttributeData = this.getAttributeData.bind(this);
         this.getPlaceholder = this.getPlaceholder.bind(this);
     }
 
-    handleOnChange(value) {
-        this.setState({
-            value
-        });
-    }
-    
+    handleChange = (newValue: any, actionMeta: any) => {
+    console.group('Value Changed');
+    console.log(newValue);
+    console.log(`action: ${actionMeta.action}`);
+    attribute = newValue;
+    console.groupEnd();
+  };
+  handleInputChange = (inputValue: any, actionMeta: any) => {
+    console.group('Input Changed');
+    console.log(inputValue);
+    console.log(`action: ${actionMeta.action}`);
+    console.groupEnd();
+  }
+
+   
     
     
     getAttributeData() {
@@ -76,25 +79,20 @@ class Attribute extends Component {
           return "Holiday";
         }
   }
-    componentWillMount() {
-        const Options = toOpt(this.getAttributeData());
-        this.setState({
-          options        : Options
-        })
-    }
+    
+    
  
 
   render(){
-    attribute = this.state.value;
+      const Options = toOpt(this.getAttributeData());
     return (
         <div>{this.getPlaceholder()}
-          <Select.Creatable
-                        multi={false}
-                        options={this.state.options}
-                        onChange={this.handleOnChange}
-                        value={this.state.value}
-                        showNewOptionAtTop={true}
-                        onBlur={this.props.handleAttribute}
+          <CreatableSelect
+                isClearable
+                onChange={this.handleChange}
+                onInputChange={this.handleInputChange}
+                onBlur={this.props.handleAttribute}
+                options={Options}
           />
         </div>
     );

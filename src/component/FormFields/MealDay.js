@@ -2,7 +2,6 @@ import React, {
    Component
  } from 'react';
 import Select from 'react-select';
-import 'react-select/dist/react-select.css';
 
 let mealDays;
 
@@ -38,7 +37,7 @@ class MealDay extends Component {
         return(
             <div>Day of the week
                     <Select
-                        multi={true}
+                        isMulti
                         options={this.state.options}
                         onChange={this.handleOnChange}
                         value={this.state.multiValue}
