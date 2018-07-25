@@ -12,8 +12,8 @@ class App extends Component {
             <div>
                 <h2>You can choose where to go from here</h2>
                 <ul>
-                    <li><Link to='/Home'>Home</Link></li>
-                    <li><Link to='/Cal'>Calendar</Link></li>
+                    <button><Link to='/Home'>Home</Link></button>
+                    <button><Link to='/Cal'>Calendar</Link></button>
                 </ul>
                 <hr/>
         
