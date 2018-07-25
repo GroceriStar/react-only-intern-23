@@ -7,12 +7,13 @@ import {
 import { topMargin } from './MealPlanStyle';
 import { MealCard } from './Cards';
 import { multiVal } from '../FormFields/Ingredients';
-import { diet } from '../FormFields/Diets';
-import { allergy } from '../FormFields/Allergy';
-import { course } from '../FormFields/Course';
-import { cuisine } from '../FormFields/Cuisine';
+//import { diet } from '../FormFields/Diets';
+//import { allergy } from '../FormFields/Allergy';
+//import { course } from '../FormFields/Course';
+//import { cuisine } from '../FormFields/Cuisine';
 import { mealDays } from '../FormFields/MealDay';
-import { holidays } from '../FormFields/Holiday';
+//import { holidays } from '../FormFields/Holiday';
+import { attribute } from '../FormFields/Attribute';
 import { mealInit } from '../../data/MealData';
 
 class MealPlan extends Component {
@@ -89,24 +90,28 @@ class MealPlan extends Component {
     }
 
     handleDiet() {
+        let diet = attribute;
         this.setState({
             meal: {diet, ...this.state.meal}
         })
     }
 
     handleAllergy() {
+        let allergy = attribute;
         this.setState({
             meal: {allergy, ...this.state.meal}
         })
     }
 
     handleCourse() {
+        let course = attribute;
         this.setState({
             meal: {course, ...this.state.meal}
         })
     }
 
     handleCuisine() {
+        let cuisine = attribute;
         this.setState({
             meal: {cuisine, ...this.state.meal}
         })
@@ -114,13 +119,14 @@ class MealPlan extends Component {
 
     handleDays() {
         this.setState({
-            meal: {...this.state.meal, day: mealDays }
+            meal: {...this.state.meal, day: mealDays}
         })
     }
 
     handleHoliday() {
+        let holidays = attribute;
         this.setState({
-            meal: {...this.state.meal, holidays: holidays }
+            meal: {holidays, ...this.state.meal }
         })
     }
 

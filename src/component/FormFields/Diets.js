@@ -1,8 +1,7 @@
 import React, {
    Component
  } from 'react';
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
+import CreatableSelect from 'react-select/lib/Creatable';
 import data from '@groceristar/groceristar-fetch/search';
 
 function toOpt(arr) {
@@ -40,7 +39,7 @@ class Diets extends Component {
         diet = this.state.value;
         return(
             <div>Diets
-                    <Select.Creatable
+                    <CreatableSelect
                         multi={false}
                         options={this.state.options}
                         onChange={this.handleOnChange}
