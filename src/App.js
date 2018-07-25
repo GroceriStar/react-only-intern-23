@@ -12,19 +12,33 @@ class App extends Component {
             <div>
                 <h2>You can choose where to go from here</h2>
                 <ul>
-                    <li><Link to='/Home'>Home</Link></li>
-                    <li><Link to='/Cal'>Calendar</Link></li>
+                    <li><Link to="/Home">Home</Link></li>
+                    <li><Link to="/Cal">Calendar</Link></li>
                 </ul>
                 <hr/>
         
                 <Switch>
                     <Route exact path='/Home' component={Home} />
                     <Route exact path='/Cal' component={WorkSched} />
+                    <Route exact path='/Recipes' component={Recipes} />
+                    <Route exact path='/Recipe/:id' component={Recipes} />
                 </Switch>
             </div>
         </BrowserRouter>
     );
   }
 }
+
+const Recipe = ({ match }) => (
+  <div>
+    <h3>ID: {match.params.id}</h3>
+  </div>
+);
+
+const Recipes = () => (
+  <div>
+    <h3>Recipes component sample</h3>
+  </div>
+);
 
 export default App;
