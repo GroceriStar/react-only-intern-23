@@ -7,12 +7,16 @@ import {
 import { topMargin } from './MealPlanStyle';
 import { MealCard } from './Cards';
 import { multiVal } from '../FormFields/Ingredients';
+
 //import { diet } from '../FormFields/Diets';
 //import { allergy } from '../FormFields/Allergy';
 //import { course } from '../FormFields/Course';
 //import { cuisine } from '../FormFields/Cuisine';
+
 import { mealDays } from '../FormFields/MealDay';
+
 //import { holidays } from '../FormFields/Holiday';
+
 import { attribute } from '../FormFields/Attribute';
 import { mealInit } from '../../data/MealData';
 

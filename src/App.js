@@ -13,4 +13,16 @@ class App extends Component {
   }
 }
 
+const Recipe = ({ match }) => (
+  <div>
+    <h3>ID: {match.params.id}</h3>
+  </div>
+);
+
+const Recipes = () => (
+  <div>
+    <h3>Recipes component sample</h3>
+  </div>
+);
+
 export default App;
