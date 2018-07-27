@@ -3,8 +3,6 @@ import { days } from '../../data/days';
 import * as styleVars from '../../data/style_vars';
 
 
-
-
 class CalendarHeader extends Component {
     render() {
         return (
