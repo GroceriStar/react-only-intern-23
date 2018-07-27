@@ -1,7 +1,9 @@
 import React, { 
   Component 
 } from 'react';
-import { ListGroup, ListGroupItem } from 'reactstrap';
+import { ListGroup, 
+    ListGroupItem 
+} from 'reactstrap';
 
 class TimeLine extends Component {
     transformTime(time) {

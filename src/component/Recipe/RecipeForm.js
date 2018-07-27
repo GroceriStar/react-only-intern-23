@@ -26,19 +26,20 @@ class Recipe extends Component {
                           validate={required}>
                           {({ input, meta }) => (
                             <div>
-                              <label>Recipy Name</label>
+                              <label>Recipe Name</label>
                               <input {...input} type="text" placeholder="Recipy Name" />
                               {meta.error && meta.touched && <span>{meta.error}</span>}
                             </div>
                           )}
                         </Field>
                         <Field
-                          name='recipyDesc'
+                          name='recipeDesc'
                           validate={required}>
                           {({ input, meta }) => (
                             <div>
-                              <label>Recipy Description</label>
-                              <input {...input} type="text" placeholder="Recipy Description" />
+                              <label>Recipe Description</label>
+                              <input {...input} type="text" 
+                                  placeholder="Recipe Description" />
                               {meta.error && meta.touched && <span>{meta.error}</span>}
                             </div>
                           )}
