@@ -1,6 +1,9 @@
 {
   "name": "react-only-intern-23",
   "version": "0.1.0",
+  "engines": {
+    "node": ">9.0"
+  },
   "private": true,
   "dependencies": {
     "@groceristar/groceristar-fetch": "^1.1.10",
