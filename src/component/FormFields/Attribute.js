@@ -8,12 +8,15 @@ import data from '@groceristar/groceristar-fetch/search';
 let attribute;
 
 function toOpt(arr) {
-    let Opt= arr.reduce((intermediate, item, index) => {
+    let Opt
+    if(typeof arr === 'object') {
+        Opt = arr.reduce((intermediate, item, index) => {
         intermediate[index]={};
         intermediate[index].value = index.toString();
         intermediate[index].label = item;
         return intermediate;
     }, []);
+    }
     return Opt;
 }
 
@@ -27,17 +30,15 @@ class Attribute extends Component {
         this.getPlaceholder = this.getPlaceholder.bind(this);
     }
 
-    handleChange = (newValue: any, actionMeta: any) => {
+    handleChange = (newValue) => {
     console.group('Value Changed');
     console.log(newValue);
-    console.log(`action: ${actionMeta.action}`);
     attribute = newValue;
     console.groupEnd();
   };
-  handleInputChange = (inputValue: any, actionMeta: any) => {
+  handleInputChange = (inputValue) => {
     console.group('Input Changed');
     console.log(inputValue);
-    console.log(`action: ${actionMeta.action}`);
     console.groupEnd();
   }
 

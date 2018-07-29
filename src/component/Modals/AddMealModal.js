@@ -62,7 +62,7 @@ class AddMeal extends Component {
                   />
                 </ModalBody>
                 <ModalFooter>
-                  <Button color="primary" onClick={this.clickHandle}>
+                  <Button color="primary" >
                     Add
                   </Button>
                   <Button color="secondary" onClick={this.toggle}>
