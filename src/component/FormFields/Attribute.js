@@ -85,7 +85,7 @@ class Attribute extends Component {
  
 
   render(){
-      const Options = toOpt(data.getAttribute(this.props.type.toLowerCase()));
+      const Options = toOpt(data.getAttribute(this.props.type ? this.props.type.toLowerCase() : undefined ));
     return (
         <div>{this.getPlaceholder()}
           <CreatableSelect
