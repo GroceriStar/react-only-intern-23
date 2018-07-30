@@ -15,12 +15,12 @@ class MealCard extends Component {
     showIngredients() {
         return this.props.mealprop.ingredients.map((ingr, index) => {
                       if (index === this.props.mealprop.ingredients.length-2 || this.props.mealprop.ingredients.length === 1) {
-                          return <span key={index}>{ingr.label} </span>
+                          return <span key={index}>{ingr.value} </span>
                       }
                       if (index === this.props.mealprop.ingredients.length-1 && index !== 0) {
-                          return <span key={index}>and {ingr.label}</span>
+                          return <span key={index}>and {ingr.value}</span>
                       }
-                      return <span key={index}>{ingr.label}, </span>
+                      return <span key={index}>{ingr.value}, </span>
                 }
             );
         

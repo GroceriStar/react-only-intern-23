@@ -14,16 +14,33 @@ class AppRoute extends Component {
                 <ul>
                     <button><Link to='/Home'>Home</Link></button>
                     <button><Link to='/Cal'>Calendar</Link></button>
+                    <button><Link to='/Recipes'>Recipes</Link></button>
+                    <button><Link to='/Recipe/:3'>Recipe</Link></button>
                 </ul>
                 <hr/>
                 <Switch>
                     <Route exact path='/Home' component={Home} />
                     <Route exact path='/Cal' component={WorkSched} />
+                    <Route exact path='/Recipes' component={Recipes} />
+                    <Route exact path='/Recipe/:id' component={Recipe} />
                 </Switch>
             </div>
         </BrowserRouter>
     );
   }
 }
+
+const Recipe = ({ match }) => (
+  <div>
+    <h3>ID: {match.params.id}</h3>
+  </div>
+);
+
+const Recipes = () => (
+  <div>
+    <h3>Recipes component sample</h3>
+  </div>
+);
+
 
 export { AppRoute }

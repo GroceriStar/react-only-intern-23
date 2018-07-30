@@ -26,7 +26,7 @@ function toOpt(arr) {
 class Attribute extends Component {
   constructor(props) {
         super(props);
-        this.getAttributeData = this.getAttributeData.bind(this);
+//        this.getAttributeData = this.getAttributeData.bind(this);
         this.getPlaceholder = this.getPlaceholder.bind(this);
     }
 
@@ -45,29 +45,29 @@ class Attribute extends Component {
    
     
     
-    getAttributeData() {
-        if (this.props.type == 'Allergy') {
-          return data.getAllergies();
-        }
-        if (this.props.type == 'Diet') {
-          return data.getDiets();
-        }
-        if (this.props.type == 'Cuisine') {
-          return data.getCuisines();
-        }
-        if (this.props.type == 'Course') {
-          return data.getCourses();
-        }
-        if (this.props.type == 'Holiday') {
-          return data.getHolidays();
-        }
-  }
+//    getAttributeData() {
+//        if (this.props.type == 'Allergy') {
+//          return data.getAllergies();
+//        }
+//        if (this.props.type == 'Diet') {
+//          return data.getDiets();
+//        }
+//        if (this.props.type == 'Cuisine') {
+//          return data.getCuisines();
+//        }
+//        if (this.props.type == 'Course') {
+//          return data.getCourses();
+//        }
+//        if (this.props.type == 'Holiday') {
+//          return data.getHolidays();
+//        }
+//  }
 
     getPlaceholder() {
         if (this.props.type == 'Allergy') {
           return "Allergies";
         }
-        if (this.props.type == 'Diet') {
+        if (this.props.type == 'Diets') {
           return "Specific Diets";
         }
         if (this.props.type == 'Cuisine') {
@@ -76,7 +76,7 @@ class Attribute extends Component {
         if (this.props.type == 'Course') {
           return "Course";
         }
-        if (this.props.type == 'Holiday') {
+        if (this.props.type == 'Holidays') {
           return "Holiday";
         }
   }
@@ -85,7 +85,7 @@ class Attribute extends Component {
  
 
   render(){
-      const Options = toOpt(this.getAttributeData());
+      const Options = toOpt(data.getAttribute(this.props.type.toLowerCase()));
     return (
         <div>{this.getPlaceholder()}
           <CreatableSelect
