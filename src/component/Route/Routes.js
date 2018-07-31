@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Link, Route } from 'react-router-dom';
 import { Home } from '../Home'
 import { WorkSched } from '../WorkSchedule/WorkSched';
+import { Recipes } from '../Recipe/RecipeForm';
 
 
 class AppRoute extends Component {
@@ -36,11 +37,6 @@ const Recipe = ({ match }) => (
   </div>
 );
 
-const Recipes = () => (
-  <div>
-    <h3>Recipes component sample</h3>
-  </div>
-);
 
 
 export { AppRoute }

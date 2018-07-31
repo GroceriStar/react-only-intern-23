@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import data from '@groceristar/groceristar-fetch';
+import data from '@groceristar/groceristar-fetch/chickenKyiv';
 
 class RecipeTest extends Component {
 	constructor(props) {
