@@ -75,7 +75,8 @@ class Calendar extends Component {
                 </div>
                 <table>
                     <CalendarHeader />
-                   <CalendarBody month={this.state.month} firstDay={this.state.firstDay}/>
+                   <CalendarBody month={this.state.month} 
+                        firstDay={this.state.firstDay}/>
                 </table>
             </div>
         )

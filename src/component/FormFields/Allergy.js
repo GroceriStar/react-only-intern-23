@@ -39,15 +39,16 @@ class Allergy extends Component {
     render() {
         allergy = this.state.value;
         return(
-            <div>Allergy
-                    <CreatableSelect
-                        multi={false}
-                        options={this.state.options}
-                        onChange={this.handleOnChange}
-                        value={this.state.value}
-                        showNewOptionAtTop={true}
-                        onBlur={this.props.handleAllergy}
-                    />
+            <div>
+                Allergy
+                <CreatableSelect
+                    multi={false}
+                    options={this.state.options}
+                    onChange={this.handleOnChange}
+                    value={this.state.value}
+                    showNewOptionAtTop={true}
+                    onBlur={this.props.handleAllergy}
+                />
             </div>
         );
     }

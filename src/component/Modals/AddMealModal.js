@@ -42,7 +42,7 @@ class AddMeal extends Component {
               Add Meal
             </Button>
             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                <AvForm onValidSubmit={this.handleValidSubmit} >
+              <AvForm onValidSubmit={this.handleValidSubmit} >
                 <ModalHeader toggle={this.toggle}>
                   Add a meal
                 </ModalHeader>
@@ -69,8 +69,8 @@ class AddMeal extends Component {
                     Cancel
                   </Button>
                 </ModalFooter>
-                </AvForm>
-              </Modal>
+              </AvForm>
+            </Modal>
            </div>
         );
     }

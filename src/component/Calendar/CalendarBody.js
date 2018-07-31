@@ -15,12 +15,11 @@ class CalendarBody extends Component {
         daysCounterReset();
         return Object.keys(days).map(index => {
             if(index < this.props.firstDay) {
-            return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#bbb'}}>
+                return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#bbb'}}>
             </td>
-            }
-            else {daysCounter++;
+            } else { daysCounter++;
                   return <td key={index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777', cursor: 'pointer'}}>
-                         {daysCounter}
+                            {daysCounter}
                          </td>
              }
         })
@@ -29,18 +28,16 @@ class CalendarBody extends Component {
     calRender(x) {
         return Object.keys(days).map(index => {
             if (daysCounter < maxDaysOfMonth[this.props.month]) {
-             daysCounter++;
-             return (
-                <td key={x+index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777', cursor: 'pointer'}}>
-                     {daysCounter}
-                </td>
-             );
-                                 }
-             else {
+                daysCounter++;
+                 return (
+                    <td key={x+index} style={{...styleVars.defaultTextColor, ...styleVars.blockSize, backgroundColor: '#777', cursor: 'pointer'}}>
+                         {daysCounter}
+                    </td>
+                 );
+            } else {
              return null;
-                }
             }
-        )
+        })
     }
     
     
