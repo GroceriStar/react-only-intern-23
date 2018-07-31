@@ -1,18 +1,13 @@
 import React, {
    Component
  } from 'react';
-import { MealName } from '../FormFields/MealName';
-import { Ingredient } from '../FormFields/Ingredients';
-import { ImageURL } from '../FormFields/MealImage';
-import { Steps } from '../FormFields/MealSteps';
-import { Description } from '../FormFields/MealDescription';
-//import { Diets } from '../FormFields/Diets';
-//import { Allergy } from '../FormFields/Allergy';
-//import { Course } from '../FormFields/Course';
-//import { Cuisine } from '../FormFields/Cuisine';
-import { MealDay } from '../FormFields/MealDay';
-//import { Holiday } from '../FormFields/Holiday';
-import { Attribute } from '../FormFields/Attribute';
+import { MealName } from './FormFields/MealName';
+import { Ingredient } from './FormFields/Ingredients';
+import { ImageURL } from './FormFields/MealImage';
+import { Steps } from './FormFields/MealSteps';
+import { Description } from './FormFields/MealDescription';
+import { MealDay } from './FormFields/MealDay';
+import { Attribute } from './FormFields/Attribute';
 
 class MealForm extends Component {
     render() {
@@ -24,9 +19,9 @@ class MealForm extends Component {
               <Steps handleSteps={this.props.handleSteps} />
               <Description handleDescription={this.props.handleDescription} />
               <Attribute type='Diets' handleAttribute={this.props.handleDiet} />
-              <Attribute type='Allergy' handleAttribute={this.props.handleAllergy} />
-              <Attribute type='Course' handleAttribute={this.props.handleCourse} />
-              <Attribute type='Cuisine' handleAttribute={this.props.handleCuisine} />
+              <Attribute type='Allergies' handleAttribute={this.props.handleAllergy} />
+              <Attribute type='Courses' handleAttribute={this.props.handleCourse} />
+              <Attribute type='Cuisines' handleAttribute={this.props.handleCuisine} />
               <MealDay handleDays={this.props.handleDays} />
               <Attribute type='Holidays' handleAttribute={this.props.handleHoliday} />
             </div>

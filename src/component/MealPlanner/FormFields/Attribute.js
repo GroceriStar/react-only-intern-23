@@ -18,6 +18,7 @@ function toOpt(arr) {
     }, []);
     }
     return Opt;
+
 }
 
 
@@ -26,8 +27,8 @@ function toOpt(arr) {
 class Attribute extends Component {
   constructor(props) {
         super(props);
-//        this.getAttributeData = this.getAttributeData.bind(this);
         this.getPlaceholder = this.getPlaceholder.bind(this);
+        this.loadOptions = this.loadOptions.bind(this);
     }
 
     handleChange = (newValue) => {
@@ -42,50 +43,38 @@ class Attribute extends Component {
     console.groupEnd();
   }
 
-   
-    
-    
-//    getAttributeData() {
-//        if (this.props.type == 'Allergy') {
-//          return data.getAllergies();
-//        }
-//        if (this.props.type == 'Diet') {
-//          return data.getDiets();
-//        }
-//        if (this.props.type == 'Cuisine') {
-//          return data.getCuisines();
-//        }
-//        if (this.props.type == 'Course') {
-//          return data.getCourses();
-//        }
-//        if (this.props.type == 'Holiday') {
-//          return data.getHolidays();
-//        }
-//  }
-
     getPlaceholder() {
-        if (this.props.type == 'Allergy') {
+        if (this.props.type == 'Allergies') {
           return "Allergies";
         }
         if (this.props.type == 'Diets') {
           return "Specific Diets";
         }
-        if (this.props.type == 'Cuisine') {
+        if (this.props.type == 'Cuisines') {
           return "Specific Cuisine ";
         }
-        if (this.props.type == 'Course') {
+        if (this.props.type == 'Courses') {
           return "Course";
         }
         if (this.props.type == 'Holidays') {
           return "Holiday";
         }
   }
+
+    loadOptions() {
+        if(this.props.type) {
+            let optionsData = data.getAttribute(this.props.type.toLowerCase());
+            const Options = toOpt(optionsData);
+            return Options;
+        }
+       
+    }
     
     
  
 
   render(){
-      const Options = toOpt(data.getAttribute(this.props.type ? this.props.type.toLowerCase() : undefined ));
+      const Options = this.loadOptions();
     return (
         <div>{this.getPlaceholder()}
           <CreatableSelect
