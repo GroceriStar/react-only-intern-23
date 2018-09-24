@@ -401,9 +401,9 @@ autoprefixer@^6.3.1:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
-availity-reactstrap-validation@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/availity-reactstrap-validation/-/availity-reactstrap-validation-2.0.6.tgz#307c8b439acc99c4492589c77eca032874b794f9"
+availity-reactstrap-validation@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/availity-reactstrap-validation/-/availity-reactstrap-validation-2.1.2.tgz#dac060bbc3f09739e30f9547d2357d0f6b7c0db0"
   dependencies:
     babel-runtime "^6.26.0"
     classnames "^2.2.6"
