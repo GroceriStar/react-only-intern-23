@@ -12,7 +12,7 @@
     "final-form": "^4.11.0",
     "raven-js": "^3.27.0",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "react-dom": "^16.6.1",
     "react-final-form": "^3.6.7",
     "react-raven": "^1.2.3",
     "react-router-dom": "^4.3.1",
