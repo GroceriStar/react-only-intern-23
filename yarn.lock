@@ -708,7 +708,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.1.5":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.1.5":
   version "7.1.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.1.5.tgz#4170907641cf1f61508f563ece3725150cc6fe39"
   dependencies:
@@ -7360,9 +7360,11 @@ react-error-overlay@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.0.tgz#c516995a5652e7bfbed8b497910d5280df74a7e8"
 
-react-final-form@^3.6.7:
-  version "3.6.7"
-  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-3.6.7.tgz#c4d2e01e04674201b850cdd05ed5b67ff5ea06c5"
+react-final-form@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-4.0.2.tgz#fa829d7fb60dcc168804bf2edda58f3d62c4607b"
+  dependencies:
+    "@babel/runtime" "^7.1.2"
 
 react-input-autosize@^2.2.1:
   version "2.2.1"
