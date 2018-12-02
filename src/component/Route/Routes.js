@@ -2,17 +2,20 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Link, Route } from 'react-router-dom';
 import { Home } from '../Home'
 import { WorkSched } from '../WorkSchedule/WorkSched';
-import data from '@groceristar/groceristar-fetch/groceristar';
+
+// import data from '@groceristar/groceristar-fetch/groceristar';
 
 class AppRoute extends Component {
 
   render() {
-    console.log(data.getIngredients());
-    console.log(data.getGrocery());
-    console.log(data.getUsers());
-    console.log(data.getDepartments());
-    console.log(data.getAllDepartments());
-    console.log(data.getAllIngredientsByOneDepartment('Fresh vegetables'));
+
+    // console.log(data.getIngredients());
+    // console.log(data.getGrocery());
+    // console.log(data.getUsers());
+    // console.log(data.getDepartments());
+    // console.log(data.getAllDepartments());
+    // console.log(data.getAllIngredientsByOneDepartment('Fresh vegetables'));
+
     return (
         <BrowserRouter>
             <div>
