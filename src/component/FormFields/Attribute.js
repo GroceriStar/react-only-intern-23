@@ -3,7 +3,11 @@ import React, {
  } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 
-import data from '@groceristar/groceristar-fetch/search';
+// import data from '@groceristar/groceristar-fetch/search';
+
+import {
+  getAttribute, getPlaceholder
+} from "../../selectors/selector";
 
 let attribute;
 
@@ -24,27 +28,29 @@ function toOpt(arr) {
 
 
 class Attribute extends Component {
+  
   constructor(props) {
-        super(props);
-//        this.getAttributeData = this.getAttributeData.bind(this);
-        this.getPlaceholder = this.getPlaceholder.bind(this);
-    }
+    super(props);
+    // this.getAttributeData = this.getAttributeData.bind(this);
+    this.getPlaceholder = this.getPlaceholder.bind(this);
+  }
 
-    handleChange = (newValue) => {
+  handleChange = (newValue) => {
     console.group('Value Changed');
     console.log(newValue);
     attribute = newValue;
     console.groupEnd();
   };
+
   handleInputChange = (inputValue) => {
     console.group('Input Changed');
     console.log(inputValue);
     console.groupEnd();
   }
 
-   
-    
-    
+
+
+
 //    getAttributeData() {
 //        if (this.props.type == 'Allergy') {
 //          return data.getAllergies();
@@ -63,31 +69,32 @@ class Attribute extends Component {
 //        }
 //  }
 
-    getPlaceholder() {
-        if (this.props.type == 'Allergy') {
-          return "Allergies";
-        }
-        if (this.props.type == 'Diets') {
-          return "Specific Diets";
-        }
-        if (this.props.type == 'Cuisine') {
-          return "Specific Cuisine ";
-        }
-        if (this.props.type == 'Course') {
-          return "Course";
-        }
-        if (this.props.type == 'Holidays') {
-          return "Holiday";
-        }
-  }
-    
-    
- 
+  //   getPlaceholder() {
+  //       if (this.props.type == 'Allergy') {
+  //         return "Allergies";
+  //       }
+  //       if (this.props.type == 'Diets') {
+  //         return "Specific Diets";
+  //       }
+  //       if (this.props.type == 'Cuisine') {
+  //         return "Specific Cuisine ";
+  //       }
+  //       if (this.props.type == 'Course') {
+  //         return "Course";
+  //       }
+  //       if (this.props.type == 'Holidays') {
+  //         return "Holiday";
+  //       }
+  // }
+  //
+
+
 
   render(){
-      const Options = toOpt(data.getAttribute(this.props.type ? this.props.type.toLowerCase() : undefined ));
+    const Options = toOpt(getAttribute(this.props.type ? this.props.type.toLowerCase() : undefined ));
+
     return (
-        <div>{this.getPlaceholder()}
+        <div>{getPlaceholder()}
           <CreatableSelect
                 isClearable
                 onChange={this.handleChange}
@@ -100,4 +107,3 @@ class Attribute extends Component {
   }
 }
 export { Attribute, attribute }
-

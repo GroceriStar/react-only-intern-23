@@ -3,7 +3,11 @@ import React, {
  } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 
-import data from '@groceristar/groceristar-fetch/search';
+// import data from '@groceristar/groceristar-fetch/search';
+
+import {
+  getAttribute, getPlaceholder
+} from "../../selectors/selector";
 
 function toOpt(arr) {
     let Opt= arr.reduce((intermediate, item, index) => {
@@ -15,7 +19,7 @@ function toOpt(arr) {
     return Opt;
 }
 
-const Options = toOpt(data.getAllergies());
+const Options = toOpt(getAttribute('allergies'));
 
 let allergy;
 

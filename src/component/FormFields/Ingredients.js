@@ -3,7 +3,12 @@ import React, {
  } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 
-import data from '@groceristar/groceristar-fetch/search';
+import {
+  getIngredients1, getPlaceholder
+} from "../../selectors/selector";
+// import data from '@groceristar/groceristar-fetch/search';
+
+
 
 function toOpt(arr) {
     let Opt= arr.reduce((intermediate, item, index) => {
@@ -14,8 +19,8 @@ function toOpt(arr) {
     }, []);
     return Opt;
 }
-
-const Options = toOpt(data.getIngredients1());
+//NOT WORKING
+const Options = toOpt(getIngredients1());
 
 
 let multiVal;

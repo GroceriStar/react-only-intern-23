@@ -2,8 +2,11 @@ import React, {
    Component
  } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
+import {
+  getAttribute, getPlaceholder
+} from "../../selectors/selector";
 
-import data from '@groceristar/groceristar-fetch/search';
+// import data from '@groceristar/groceristar-fetch/search';
 
 function toOpt(arr) {
     let Opt= arr.reduce((intermediate, item, index) => {
@@ -15,7 +18,7 @@ function toOpt(arr) {
     return Opt;
 }
 
-const Options = toOpt(data.getHolidays());
+const Options = toOpt(getAttribute('holidays'));
 
 let holidays;
 
