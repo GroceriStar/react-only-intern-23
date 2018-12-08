@@ -28,11 +28,11 @@ function toOpt(arr) {
 
 
 class Attribute extends Component {
-  
+
   constructor(props) {
     super(props);
     // this.getAttributeData = this.getAttributeData.bind(this);
-    this.getPlaceholder = this.getPlaceholder.bind(this);
+    // this.getPlaceholder = this.getPlaceholder.bind(this);
   }
 
   handleChange = (newValue) => {

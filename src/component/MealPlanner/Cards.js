@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Col, 
+  Col,
   Card,
   CardImg,
   CardText,
@@ -9,22 +9,33 @@ import {
   CardSubtitle
 } from 'reactstrap';
 import { cardSize, cardHeight } from './MealPlanStyle';
+import _ from 'lodash';
+
+const showIngredients = ( ingredients ) => {
+
+  const list =  _.map(ingredients, (ingredient, index) => {
+
+      if( index === ingredients.length-2 || ingredients.length === 1 ){
+        return <span key={index}> {ingredient.value} </span>
+      }
+
+      // last item
+      if( index === ingredients.length-1 || index !== 0 ){
+        return <span key={index}>and {ingredient.value}</span>
+      }
+
+      return <span key={index}>{ingredient.value}, </span>
+
+
+    });
+
+  return list;
+
+};
 
 
 class MealCard extends Component {
-    showIngredients() {
-        return this.props.mealprop.ingredients.map((ingr, index) => {
-                      if (index === this.props.mealprop.ingredients.length-2 || this.props.mealprop.ingredients.length === 1) {
-                          return <span key={index}>{ingr.value} </span>
-                      }
-                      if (index === this.props.mealprop.ingredients.length-1 && index !== 0) {
-                          return <span key={index}>and {ingr.value}</span>
-                      }
-                      return <span key={index}>{ingr.value}, </span>
-                }
-            );
-        
-    }
+
 
     render() {
         return(
@@ -35,7 +46,8 @@ class MealCard extends Component {
                   <CardBody>
                     <CardTitle>{this.props.mealprop.name}</CardTitle>
                     <CardSubtitle>You'll Need: </CardSubtitle>
-                    {this.showIngredients()}
+                    
+                    {showIngredients(this.props.mealprop.ingredients)}
                     <hr/>
                     <CardText>
                       {this.props.mealprop.description}

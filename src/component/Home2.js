@@ -3,11 +3,11 @@ import { Calendar }  from './Calendar/Calendar';
 import { MealPlan }  from './MealPlanner/MealPlan';
 import { Recipe }    from './Recipe/RecipeForm'
 
-class Home extends Component {
+class Home2 extends Component {
     render() {
         return(
             <div>
-            // <Calendar />
+            <Calendar />
             <MealPlan />
             <Recipe />
             </div>
@@ -15,4 +15,4 @@ class Home extends Component {
     }
 }
 
-export { Home }
+export { Home2 }
