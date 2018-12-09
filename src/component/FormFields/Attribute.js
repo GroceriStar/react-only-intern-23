@@ -3,7 +3,6 @@ import React, {
  } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 
-// import data from '@groceristar/groceristar-fetch/search';
 
 import {
   getAttribute, getPlaceholder
@@ -91,7 +90,9 @@ class Attribute extends Component {
 
 
   render(){
-    const Options = toOpt(getAttribute(this.props.type ? this.props.type.toLowerCase() : undefined ));
+    const Options = toOpt(
+      getAttribute(this.props.type ? this.props.type.toLowerCase() : undefined )
+    );
 
     return (
         <div>{getPlaceholder()}

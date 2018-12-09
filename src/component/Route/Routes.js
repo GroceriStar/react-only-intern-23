@@ -4,23 +4,17 @@ import { Home } from '../Home'
 import { Home2 } from '../Home2'
 import { WorkSched } from '../WorkSchedule/WorkSched';
 
-// import data from '@groceristar/groceristar-fetch/groceristar';
 
 class AppRoute extends Component {
 
   render() {
 
-    // console.log(data.getIngredients());
-    // console.log(data.getGrocery());
-    // console.log(data.getUsers());
-    // console.log(data.getDepartments());
-    // console.log(data.getAllDepartments());
-    // console.log(data.getAllIngredientsByOneDepartment('Fresh vegetables'));
-
     return (
         <BrowserRouter>
             <div>
-                <h2>You can choose where to go from here</h2>
+                <h2>
+                  You can choose where to go from here
+                </h2>
                 <ul>
                     <button><Link to='/Home'>Home</Link></button>
                     <button><Link to='/Home2'>Home</Link></button>

@@ -29,19 +29,23 @@ class AddMeal extends Component {
             modal: !this.state.modal
         });
     }
-    
+
     handleValidSubmit() {
         this.props.handleClick();
         this.toggle();
     }
 
-    render() { 
+    render() {
         return(
           <div>
             <Button onClick={this.toggle}>
               Add Meal
             </Button>
-            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+            <Modal
+              isOpen={this.state.modal}
+              toggle={this.toggle}
+              className={this.props.className}>
+
               <AvForm onValidSubmit={this.handleValidSubmit} >
                 <ModalHeader toggle={this.toggle}>
                   Add a meal
@@ -70,6 +74,7 @@ class AddMeal extends Component {
                   </Button>
                 </ModalFooter>
               </AvForm>
+              
             </Modal>
            </div>
         );
