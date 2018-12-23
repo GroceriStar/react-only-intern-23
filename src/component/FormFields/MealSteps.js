@@ -6,14 +6,17 @@ import { FormGroup } from 'reactstrap';
 
 
 class Steps extends Component {
-    render() {
-        return(
-        <FormGroup>
-          <AvField onBlur={this.props.handleSteps} name="Steps" label="Steps for recipe" 
+  render() {
+    return(
+      <FormGroup>
+        <AvField
+          onBlur={this.props.handleSteps}
+          name="Steps"
+          label="Steps for recipe"
           type="textArea" />
-        </FormGroup>
-        );
-    }
+      </FormGroup>
+    );
+  }
 }
 
 export { Steps }

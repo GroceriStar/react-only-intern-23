@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AddMeal } from '../Modals/AddMealModal';
 import {
   Container,
-  Row 
+  Row
 } from 'reactstrap';
 import { topMargin } from './MealPlanStyle';
 import { MealCard } from './Cards';
@@ -47,8 +47,8 @@ class MealPlan extends Component {
     }
 
     renderMeals() {
-        return (
-            <div>
+      return (
+          <div>
             <Container>
                 <Row>
                 {this.state.meals.map((meal, index) => {
@@ -58,8 +58,8 @@ class MealPlan extends Component {
                 })}
                 </Row>
             </Container>
-            </div>
-        );
+          </div>
+      );
     }
 
 
@@ -176,7 +176,7 @@ class MealPlan extends Component {
               handleDays={this.handleDays}
               handleHoliday={this.handleHoliday}
             />
-            
+
             <div style={topMargin}>
             <div>{ this.state.showAddMealMessage ? <h3>Meal was added</h3> : null }</div>
             <ul>
