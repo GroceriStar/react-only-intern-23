@@ -5,6 +5,7 @@ import Select from 'react-select';
 
 let mealDays;
 
+import { GroupedElements } from '@groceristar/select-component';
 
 class MealDay extends Component {
     constructor(props) {

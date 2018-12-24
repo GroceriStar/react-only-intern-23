@@ -3,6 +3,8 @@ import React, {
  } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 
+import { GroupedElements } from '@groceristar/select-component';
+
 import {
   getAttribute, getPlaceholder
 } from "../../selectors/selector";
@@ -22,7 +24,7 @@ const Options = toOpt(getAttribute('courses'));
 let course;
 
 class Course extends Component {
-  
+
     constructor(props) {
         super(props);
         this.state = {

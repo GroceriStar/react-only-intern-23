@@ -6,9 +6,9 @@ import CreatableSelect from 'react-select/lib/Creatable';
 import {
   getIngredients1, getPlaceholder
 } from "../../selectors/selector";
-// import data from '@groceristar/groceristar-fetch/search';
 
 
+import { GroupedElements } from '@groceristar/select-component';
 
 function toOpt(arr) {
     let Opt= arr.reduce((intermediate, item, index) => {

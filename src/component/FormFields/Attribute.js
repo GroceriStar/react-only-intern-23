@@ -3,6 +3,8 @@ import React, {
  } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 
+import { GroupedElements } from '@groceristar/select-component';
+
 
 import {
   getAttribute, getPlaceholder

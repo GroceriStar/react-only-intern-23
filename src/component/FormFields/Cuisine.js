@@ -3,10 +3,11 @@ import React, {
  } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 
+import { GroupedElements } from '@groceristar/select-component';
+
 import {
   getAttribute, getPlaceholder
 } from "../../selectors/selector";
-// import data from '@groceristar/groceristar-fetch/search';
 
 function toOpt(arr) {
     let Opt= arr.reduce((intermediate, item, index) => {
