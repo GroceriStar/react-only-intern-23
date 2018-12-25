@@ -3,22 +3,22 @@ import React, {
  } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 
-import { ReactSelectWrapper } from '@groceristar/select-component';
+import { ReactSelectWrapper, toOpt } from '@groceristar/select-component';
 
 import {
   getAttribute, getPlaceholder
 } from "../../selectors/selector";
-// import data from '@groceristar/groceristar-fetch/search';
 
-function toOpt(arr) {
-    let Opt= arr.reduce((intermediate, item, index) => {
-        intermediate[index]={};
-        intermediate[index].value = index;
-        intermediate[index].label = item;
-        return intermediate;
-    }, []);
-    return Opt;
-}
+
+// function toOpt(arr) {
+//     let Opt= arr.reduce((intermediate, item, index) => {
+//         intermediate[index]={};
+//         intermediate[index].value = index;
+//         intermediate[index].label = item;
+//         return intermediate;
+//     }, []);
+//     return Opt;
+// }
 
 const Options = toOpt(getAttribute('courses'));
 let course;
@@ -45,14 +45,16 @@ class Course extends Component {
         course = this.state.value;
         return(
             <div>Course
-                    <CreatableSelect
-                        multi={false}
-                        options={this.state.options}
-                        onChange={this.handleOnChange}
-                        value={this.state.value}
-                        showNewOptionAtTop={true}
-                        onBlur={this.props.handleCourse}
-                    />
+                <CreatableSelect
+                    multi={false}
+                    options={this.state.options}
+                    onChange={this.handleOnChange}
+                    value={this.state.value}
+                    showNewOptionAtTop={true}
+                    onBlur={this.props.handleCourse}
+                />
+                <ReactSelectWrapper
+                />
             </div>
         );
     }

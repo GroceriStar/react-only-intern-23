@@ -8,17 +8,17 @@ import {
 } from "../../selectors/selector";
 
 
-import { ReactSelectWrapper } from '@groceristar/select-component';
+import { ReactSelectWrapper, toOpt } from '@groceristar/select-component';
 
-function toOpt(arr) {
-    let Opt= arr.reduce((intermediate, item, index) => {
-        intermediate[index]={};
-        intermediate[index].value = index.toString();
-        intermediate[index].label = item;
-        return intermediate;
-    }, []);
-    return Opt;
-}
+// function toOpt(arr) {
+//     let Opt= arr.reduce((intermediate, item, index) => {
+//         intermediate[index]={};
+//         intermediate[index].value = index.toString();
+//         intermediate[index].label = item;
+//         return intermediate;
+//     }, []);
+//     return Opt;
+// }
 //NOT WORKING
 const Options = toOpt(getIngredients1());
 
@@ -46,12 +46,14 @@ class Ingredient extends Component {
     render() {
         return(
             <div>Ingredients
-                    <CreatableSelect
-                        isMulti
-                        options={this.state.options}
-                        onChange={this.handleOnChange}
-                        onBlur={this.props.handleIngredients}
-                    />
+                <CreatableSelect
+                    isMulti
+                    options={this.state.options}
+                    onChange={this.handleOnChange}
+                    onBlur={this.props.handleIngredients}
+                />
+                <ReactSelectWrapper
+                />
             </div>
         );
     }

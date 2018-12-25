@@ -3,21 +3,21 @@ import React, {
  } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 
-import { ReactSelectWrapper } from '@groceristar/select-component';
+import { ReactSelectWrapper, toOpt } from '@groceristar/select-component';
 
 import {
   getAttribute, getPlaceholder
 } from "../../selectors/selector";
 
-function toOpt(arr) {
-    let Opt= arr.reduce((intermediate, item, index) => {
-        intermediate[index]={};
-        intermediate[index].value = index;
-        intermediate[index].label = item;
-        return intermediate;
-    }, []);
-    return Opt;
-}
+// function toOpt(arr) {
+//     let Opt= arr.reduce((intermediate, item, index) => {
+//         intermediate[index]={};
+//         intermediate[index].value = index;
+//         intermediate[index].label = item;
+//         return intermediate;
+//     }, []);
+//     return Opt;
+// }
 
 const Options = toOpt(getAttribute('allergies'));
 
@@ -52,6 +52,8 @@ class Allergy extends Component {
                     value={this.state.value}
                     showNewOptionAtTop={true}
                     onBlur={this.props.handleAllergy}
+                />
+                <ReactSelectWrapper
                 />
             </div>
         );

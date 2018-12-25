@@ -6,17 +6,17 @@ import {
   getAttribute, getPlaceholder
 } from "../../selectors/selector";
 
-import { ReactSelectWrapper } from '@groceristar/select-component';
+import { ReactSelectWrapper, toOpt } from '@groceristar/select-component';
 
-function toOpt(arr) {
-    let Opt= arr.reduce((intermediate, item, index) => {
-        intermediate[index]={};
-        intermediate[index].value = index;
-        intermediate[index].label = item;
-        return intermediate;
-    }, []);
-    return Opt;
-}
+// function toOpt(arr) {
+//     let Opt= arr.reduce((intermediate, item, index) => {
+//         intermediate[index]={};
+//         intermediate[index].value = index;
+//         intermediate[index].label = item;
+//         return intermediate;
+//     }, []);
+//     return Opt;
+// }
 
 const Options = toOpt(getAttribute('holidays'));
 
@@ -44,14 +44,16 @@ class Holiday extends Component {
         holidays = this.state.multiValue;
         return(
             <div>Holidays
-                    <CreatableSelect
-                        multi={true}
-                        options={this.state.options}
-                        onChange={this.handleOnChange}
-                        value={this.state.multiValue}
-                        showNewOptionAtTop={true}
-                        onBlur={this.props.handleHoliday}
-                    />
+                <CreatableSelect
+                    multi={true}
+                    options={this.state.options}
+                    onChange={this.handleOnChange}
+                    value={this.state.multiValue}
+                    showNewOptionAtTop={true}
+                    onBlur={this.props.handleHoliday}
+                />
+                <ReactSelectWrapper
+                />
             </div>
         );
     }

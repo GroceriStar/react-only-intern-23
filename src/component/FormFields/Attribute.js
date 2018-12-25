@@ -3,7 +3,7 @@ import React, {
  } from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
 
-import { ReactSelectWrapper } from '@groceristar/select-component';
+import { ReactSelectWrapper, toOpt } from '@groceristar/select-component';
 
 
 import {
@@ -12,18 +12,18 @@ import {
 
 let attribute;
 
-function toOpt(arr) {
-    let Opt
-    if(typeof arr === 'object') {
-        Opt = arr.reduce((intermediate, item, index) => {
-        intermediate[index]={};
-        intermediate[index].value = index.toString();
-        intermediate[index].label = item;
-        return intermediate;
-    }, []);
-    }
-    return Opt;
-}
+// function toOpt(arr) {
+//     let Opt
+//     if(typeof arr === 'object') {
+//         Opt = arr.reduce((intermediate, item, index) => {
+//         intermediate[index]={};
+//         intermediate[index].value = index.toString();
+//         intermediate[index].label = item;
+//         return intermediate;
+//     }, []);
+//     }
+//     return Opt;
+// }
 
 
 
@@ -104,6 +104,8 @@ class Attribute extends Component {
                 onInputChange={this.handleInputChange}
                 onBlur={this.props.handleAttribute}
                 options={Options}
+          />
+          <ReactSelectWrapper
           />
         </div>
     );
