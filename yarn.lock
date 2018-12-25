@@ -849,12 +849,13 @@
     lodash "^4.17.10"
     uuid "3.3.2"
 
-"@groceristar/select-component@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@groceristar/select-component/-/select-component-1.0.1.tgz#5776e0e55a6b20e1f297955056bcda243836ccd0"
-  integrity sha512-KjorHTrMw2+79pe4mQnJMbudvc126v0EQ6OqE4lCrPzLaaCFliXubcEclJ4IErnV3Bp4BfdSRnkS2/kcHp3gWQ==
+"@groceristar/select-component@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@groceristar/select-component/-/select-component-1.0.2.tgz#0b565b90532683e751b25bc0d3d9167a90d6b290"
+  integrity sha512-aOo5AtffQQi62uq2RRGxlpwDoLuP0ag1zwSVhDm3Yxw3xCEtvJ4wyiB5DZsnIBX+M12zmT+8PPZqXxCAXEn0sw==
   dependencies:
     antd "^3.11.2"
+    react-select "^2.1.2"
     uuid "^3.3.2"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
