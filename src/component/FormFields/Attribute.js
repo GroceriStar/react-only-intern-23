@@ -92,12 +92,18 @@ class Attribute extends Component {
 
 
   render(){
+
+
+    // NOT WORKING
     const Options = toOpt(
       getAttribute(this.props.type ? this.props.type.toLowerCase() : undefined )
     );
 
     return (
-        <div>{getPlaceholder()}
+        <div>
+          {getPlaceholder()}
+
+          {/* we don't have isClearable option in our wrapper version. also we don't have onInput event as well */}
           <CreatableSelect
                 isClearable
                 onChange={this.handleChange}
@@ -106,6 +112,10 @@ class Attribute extends Component {
                 options={Options}
           />
           <ReactSelectWrapper
+            onChange={this.handleChange}
+
+            onBlur={this.props.handleAttribute}
+            options={Options}
           />
         </div>
     );

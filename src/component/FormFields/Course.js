@@ -54,6 +54,11 @@ class Course extends Component {
                     onBlur={this.props.handleCourse}
                 />
                 <ReactSelectWrapper
+                  options={this.state.options}
+                  onChange={this.handleOnChange}
+                  value={this.state.value}
+                  
+                  onBlur={this.props.handleCourse}
                 />
             </div>
         );

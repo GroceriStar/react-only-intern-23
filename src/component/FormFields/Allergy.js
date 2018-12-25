@@ -54,6 +54,10 @@ class Allergy extends Component {
                     onBlur={this.props.handleAllergy}
                 />
                 <ReactSelectWrapper
+                  options={this.state.options}
+                  onChange={this.handleOnChange}
+                  value={this.state.value}
+                  onBlur={this.props.handleAllergy}
                 />
             </div>
         );

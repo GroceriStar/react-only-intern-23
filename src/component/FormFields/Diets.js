@@ -42,7 +42,8 @@ class Diets extends Component {
     render() {
         diet = this.state.value;
         return(
-            <div>Diets
+            <div>
+              Diets
                 <CreatableSelect
                     multi={false}
                     options={this.state.options}
@@ -52,6 +53,11 @@ class Diets extends Component {
                     onBlur={this.props.handleDiet}
                 />
                 <ReactSelectWrapper
+                  options={this.state.options}
+                  onChange={this.handleOnChange}
+                  value={this.state.value}
+
+                  onBlur={this.props.handleDiet}
                 />
             </div>
         );

@@ -4,11 +4,14 @@ import React, {
 import CreatableSelect from 'react-select/lib/Creatable';
 
 import {
-  getIngredients1, getPlaceholder
+  getIngredients, getPlaceholder
 } from "../../selectors/selector";
 
 
 import { ReactSelectWrapper, toOpt } from '@groceristar/select-component';
+
+
+// @TODO i assume toOpt should be updated, because it didn't fit to our gs-fetch model at this moment
 
 // function toOpt(arr) {
 //     let Opt= arr.reduce((intermediate, item, index) => {
@@ -19,9 +22,11 @@ import { ReactSelectWrapper, toOpt } from '@groceristar/select-component';
 //     }, []);
 //     return Opt;
 // }
-//NOT WORKING
-const Options = toOpt(getIngredients1());
 
+// const Options = toOpt(getIngredients());
+const Options = [];
+
+console.log(getIngredients())
 
 let multiVal;
 
@@ -46,6 +51,7 @@ class Ingredient extends Component {
     render() {
         return(
             <div>Ingredients
+                {/* isMultynot works at wrapper..... be aware */}
                 <CreatableSelect
                     isMulti
                     options={this.state.options}
@@ -53,6 +59,9 @@ class Ingredient extends Component {
                     onBlur={this.props.handleIngredients}
                 />
                 <ReactSelectWrapper
+                  options={this.state.options}
+                  onChange={this.handleOnChange}
+                  onBlur={this.props.handleIngredients}
                 />
             </div>
         );

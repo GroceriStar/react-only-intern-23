@@ -52,6 +52,11 @@ class Cuisine extends Component {
                     onBlur={this.props.handleCuisine}
                 />
                 <ReactSelectWrapper
+                  options={this.state.options}
+                  onChange={this.handleOnChange}
+                  value={this.state.value}
+                  
+                  onBlur={this.props.handleCuisine}
                 />
             </div>
         );
