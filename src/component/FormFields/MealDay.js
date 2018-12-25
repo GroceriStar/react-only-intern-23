@@ -3,9 +3,11 @@ import React, {
  } from 'react';
 import Select from 'react-select';
 
+// import { GroupedElements } from '@groceristar/select-component';
+
 let mealDays;
 
-import { GroupedElements } from '@groceristar/select-component';
+
 
 class MealDay extends Component {
     constructor(props) {

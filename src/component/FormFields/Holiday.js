@@ -6,7 +6,7 @@ import {
   getAttribute, getPlaceholder
 } from "../../selectors/selector";
 
-import { GroupedElements } from '@groceristar/select-component';
+import { ReactSelectWrapper } from '@groceristar/select-component';
 
 function toOpt(arr) {
     let Opt= arr.reduce((intermediate, item, index) => {
