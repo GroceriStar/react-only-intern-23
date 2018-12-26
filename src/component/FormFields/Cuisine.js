@@ -20,6 +20,7 @@ import {
 // }
 
 const Options = toOpt(getAttribute('cuisines'));
+
 let cuisine;
 
 class Cuisine extends Component {
@@ -55,7 +56,7 @@ class Cuisine extends Component {
                   options={this.state.options}
                   onChange={this.handleOnChange}
                   value={this.state.value}
-                  
+
                   onBlur={this.props.handleCuisine}
                 />
             </div>

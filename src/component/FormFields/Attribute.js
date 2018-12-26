@@ -12,6 +12,7 @@ import {
 
 let attribute;
 
+
 // function toOpt(arr) {
 //     let Opt
 //     if(typeof arr === 'object') {
@@ -47,7 +48,7 @@ class Attribute extends Component {
     console.group('Input Changed');
     console.log(inputValue);
     console.groupEnd();
-  }
+  };
 
 
 
@@ -94,14 +95,18 @@ class Attribute extends Component {
   render(){
 
 
-    // NOT WORKING
-    const Options = toOpt(
-      getAttribute(this.props.type ? this.props.type.toLowerCase() : undefined )
-    );
+      // console.log(this.props.type)
+      const { type } = this.props;
+      console.log(getAttribute( type.toLowerCase() ))
 
+    // NOT WORKING
+    // const Options = toOpt(
+    //   getAttribute(this.props.type ? this.props.type.toLowerCase() : undefined )
+    // );
+    const Options = [];
     return (
         <div>
-          {getPlaceholder()}
+          {getPlaceholder(type)}
 
           {/* we don't have isClearable option in our wrapper version. also we don't have onInput event as well */}
           <CreatableSelect
@@ -111,7 +116,12 @@ class Attribute extends Component {
                 onBlur={this.props.handleAttribute}
                 options={Options}
           />
+
+          
           <ReactSelectWrapper
+
+
+
             onChange={this.handleChange}
 
             onBlur={this.props.handleAttribute}

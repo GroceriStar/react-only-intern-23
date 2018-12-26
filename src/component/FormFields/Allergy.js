@@ -53,6 +53,7 @@ class Allergy extends Component {
                     showNewOptionAtTop={true}
                     onBlur={this.props.handleAllergy}
                 />
+                
                 <ReactSelectWrapper
                   options={this.state.options}
                   onChange={this.handleOnChange}

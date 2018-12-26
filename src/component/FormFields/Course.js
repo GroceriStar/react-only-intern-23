@@ -21,6 +21,7 @@ import {
 // }
 
 const Options = toOpt(getAttribute('courses'));
+
 let course;
 
 class Course extends Component {
@@ -53,11 +54,12 @@ class Course extends Component {
                     showNewOptionAtTop={true}
                     onBlur={this.props.handleCourse}
                 />
+
                 <ReactSelectWrapper
                   options={this.state.options}
                   onChange={this.handleOnChange}
                   value={this.state.value}
-                  
+
                   onBlur={this.props.handleCourse}
                 />
             </div>
