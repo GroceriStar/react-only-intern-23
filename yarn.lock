@@ -1556,10 +1556,10 @@ autoprefixer@^9.3.1:
     postcss "^7.0.6"
     postcss-value-parser "^3.3.1"
 
-availity-reactstrap-validation@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/availity-reactstrap-validation/-/availity-reactstrap-validation-2.4.0.tgz#e95976dd583733f575f4b3f6faa7b95311193e4c"
-  integrity sha512-3qxkLaRUjcPpb2FLXvUhWLvIqoI8xVd2atQGmI12uxwzDTGr75inojD7RgFbJskofHa1WV9drwl1G61Qv/H+JQ==
+availity-reactstrap-validation@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/availity-reactstrap-validation/-/availity-reactstrap-validation-2.5.0.tgz#1054fa473910d99fe3fc754aa96b8a7de1561c77"
+  integrity sha512-+2WzbNsnLiL0Lv+I1IZgYYRyq4kVfAVDS4Bmfg4UsCEb3Im90HBLSh3grV7LNBntwFV2vIGsUZuv3sZPEsAfRw==
   dependencies:
     babel-runtime "^6.26.0"
     classnames "^2.2.6"
