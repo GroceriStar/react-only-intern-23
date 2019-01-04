@@ -6,7 +6,7 @@
   },
   "private": true,
   "dependencies": {
-    "@groceristar/groceristar-fetch": "^1.1.35",
+    "@groceristar/groceristar-fetch": "^1.1.36",
     "@groceristar/select-component": "^1.0.3",
     "availity-reactstrap-validation": "^2.5.0",
     "bootstrap": "^4.2.1",
