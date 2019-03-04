@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import {
   Col,
   Card,
@@ -8,6 +9,7 @@ import {
   CardTitle,
   CardSubtitle
 } from 'reactstrap';
+
 import { cardSize, cardHeight } from './MealPlanStyle';
 import _ from 'lodash';
 
@@ -46,7 +48,7 @@ class MealCard extends Component {
                   <CardBody>
                     <CardTitle>{this.props.mealprop.name}</CardTitle>
                     <CardSubtitle>You'll Need: </CardSubtitle>
-                    
+
                     {showIngredients(this.props.mealprop.ingredients)}
                     <hr/>
                     <CardText>
