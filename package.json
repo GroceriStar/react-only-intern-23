@@ -11,7 +11,7 @@
     "@groceristar/select-component": "^1.0.7",
     "availity-reactstrap-validation": "^2.5.0",
     "bootstrap": "^4.2.1",
-    "final-form": "^4.11.0",
+    "final-form": "^4.12.0",
     "lodash": "^4.17.11",
     "raven-js": "^3.27.0",
     "react": "^16.7.0",
