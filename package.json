@@ -8,7 +8,7 @@
   "dependencies": {
     "@groceristar/groceristar-fetch": "^1.2.9",
     "@groceristar/meal-form-component": "^1.0.2",
-    "@groceristar/select-component": "^1.0.7",
+    "@groceristar/select-component": "^1.0.9",
     "availity-reactstrap-validation": "^2.5.0",
     "bootstrap": "^4.2.1",
     "final-form": "^4.15.0",
